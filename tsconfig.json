@@ -12,6 +12,5 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true
-  },
-  "references": [{ "path": "apps/echarts" }]
+  }
 }
