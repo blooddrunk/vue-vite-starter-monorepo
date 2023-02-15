@@ -1,0 +1,33 @@
+@layer base {
+  :root {
+    --color-primary: theme('colors.emerald.500');
+    --color-secondary: theme('colors.amber.400');
+    --color-tertiary: theme('colors.green.400');
+    --color-lighter: theme('colors.slate.100');
+    --color-light: theme('colors.slate.200');
+    --color-medium: theme('colors.slate.400');
+    --color-dark: theme('colors.slate.500');
+    --color-darker: theme('colors.slate.600');
+
+    --app-header-height: theme('spacing.16');
+    --app-content-height: calc(100vh - var(--app-header-height));
+  }
+
+  html {
+    @apply font-sans text-dark antialiased;
+    @apply overflow-hidden;
+    @apply selection:bg-emerald-300 selection:text-white;
+  }
+
+  ::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-md;
+  }
+
+  svg {
+    display: initial;
+  }
+}

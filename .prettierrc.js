@@ -1,7 +1,6 @@
 /** @type {import("@ianvs/prettier-plugin-sort-imports").PrettierConfig} */
 module.exports = {
   singleQuote: true,
-  trailingComma: 'es5',
 
   plugins: [
     '@ianvs/prettier-plugin-sort-imports',
@@ -19,7 +18,7 @@ module.exports = {
     '^@/(.*)$',
     '^[./]',
   ],
-  importOrderBuiltinModulesToTop: true,
+  importOrderBuiltinModulesToTop: true, 
   importOrderCaseInsensitive: true,
   importOrderMergeDuplicateImports: true,
   importOrderCombineTypeAndValueImports: true,

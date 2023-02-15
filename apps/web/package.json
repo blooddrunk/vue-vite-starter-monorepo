@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@app/echarts",
+  "name": "@app/web",
   "version": "1.0.0",
   "description": "",
   "type": "module",

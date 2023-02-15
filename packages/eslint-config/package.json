@@ -1,0 +1,13 @@
+{
+  "name": "@jn/eslint-config",
+  "version": "0.0.0",
+  "main": "index.cjs",
+  "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "eslint-plugin-vue": "^9.9.0"
+  },
+  "license": "ISC"
+}
