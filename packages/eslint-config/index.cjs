@@ -1,5 +1,6 @@
 require('@rushstack/eslint-patch/modern-module-resolution');
 
+// FIXME: do not use plugins under @vue scope
 module.exports = {
   root: true,
 
@@ -7,7 +8,6 @@ module.exports = {
     browser: true,
     es2022: true,
     node: true,
-    'vue/setup-compiler-macros': true,
   },
 
   extends: [
@@ -27,7 +27,5 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
-
-    'vue/multi-word-component-names': 'off',
   },
 };

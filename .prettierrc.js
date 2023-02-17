@@ -4,12 +4,13 @@ module.exports = {
 
   plugins: [
     '@ianvs/prettier-plugin-sort-imports',
-    // 'prettier-plugin-tailwindcss',
+    'prettier-plugin-tailwindcss',
   ],
   pluginSearchDirs: false,
 
-  // options of @ianvs/prettier-plugin-sort-imports
-  // '^@/typings(.*)$',
+  /**
+   * options of @ianvs/prettier-plugin-sort-imports
+   * */
   importOrder: [
     '<TYPES>',
     '<TYPES>^[./]',
@@ -18,7 +19,7 @@ module.exports = {
     '^@/(.*)$',
     '^[./]',
   ],
-  importOrderBuiltinModulesToTop: true, 
+  importOrderBuiltinModulesToTop: true,
   importOrderCaseInsensitive: true,
   importOrderMergeDuplicateImports: true,
   importOrderCombineTypeAndValueImports: true,

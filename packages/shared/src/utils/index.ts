@@ -2,6 +2,9 @@ export * from './types';
 export * from './math';
 export * from './misc';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+export const noop = () => {};
+
 export const promiseTimeout = (
   ms: number,
   throwOnTimeout = false,
@@ -11,11 +14,6 @@ export const promiseTimeout = (
     if (throwOnTimeout) setTimeout(() => reject(reason), ms);
     else setTimeout(resolve, ms);
   });
-
-export const isNumeric = (num: string | number) =>
-  !Number.isNaN(Number.parseFloat(String(num)));
-export const isNumericStrict = (num: string | number) =>
-  !isNaN(Number(num)) && isNumeric(num);
 
 export const isPromise = (promise: any) =>
   !!promise && typeof promise.then === 'function';
