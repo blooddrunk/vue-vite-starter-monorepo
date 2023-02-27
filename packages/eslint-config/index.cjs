@@ -1,9 +1,7 @@
-require('@rushstack/eslint-patch/modern-module-resolution');
+require('@jn/eslint-config/patch/modern-module-resolution');
 
 // FIXME: do not use plugins under @vue scope
 module.exports = {
-  root: true,
-
   env: {
     browser: true,
     es2022: true,

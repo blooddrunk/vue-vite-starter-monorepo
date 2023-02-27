@@ -2,6 +2,10 @@
   "name": "@jn/eslint-config",
   "version": "0.0.0",
   "main": "index.cjs",
+  "exports": {
+    ".": "./index.cjs",
+    "./patch": "./patch.cjs"
+  },
   "dependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
     "@vue/eslint-config-prettier": "^7.0.0",

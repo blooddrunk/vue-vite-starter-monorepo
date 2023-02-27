@@ -1,6 +1,7 @@
 export * from './types';
-export * from './math';
 export * from './misc';
+export * from './math';
+export * from './echarts';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 export const noop = () => {};
