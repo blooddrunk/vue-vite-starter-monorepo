@@ -45,7 +45,9 @@ export default ({ mode }) => {
 
       VueMacros({
         plugins: {
-          vue: Vue(),
+          vue: Vue({
+            reactivityTransform: true,
+          }),
           vueJsx: VueJsx(),
         },
 
@@ -96,19 +98,6 @@ export default ({ mode }) => {
           filepath: './.eslintrc-auto-import.json',
           globalsPropValue: 'readonly',
         },
-
-        resolvers: [
-          // * use wisely
-          // IconsResolver({
-          //   prefix: 'icon',
-          //   alias: {
-          //     park: 'icon-park',
-          //     fas: 'fa-solid',
-          //   },
-          //   enabledCollections: ['mdi'],
-          // }),
-          // MyComponentResolver,
-        ],
       }),
 
       TypeImports(),
@@ -116,7 +105,7 @@ export default ({ mode }) => {
 
     server: {
       host: '0.0.0.0',
-      port: 3500,
+      port: 3020,
 
       proxy: {
         '^/json/.*': {

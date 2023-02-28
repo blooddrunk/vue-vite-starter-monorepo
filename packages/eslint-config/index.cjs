@@ -1,6 +1,3 @@
-require('@jn/eslint-config/patch/modern-module-resolution');
-
-// FIXME: do not use plugins under @vue scope
 module.exports = {
   env: {
     browser: true,
@@ -9,21 +6,25 @@ module.exports = {
   },
 
   extends: [
-    'plugin:vue/vue3-essential',
-    '@vue/eslint-config-typescript/recommended',
-    '@vue/eslint-config-prettier',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
   ],
 
+  parser: '@typescript-eslint/parser',
+
   parserOptions: {
-    ecmaVersion: 'latest',
     sourceType: 'module',
+    ecmaVersion: 'latest',
   },
 
-  plugins: [],
+  plugins: ['@typescript-eslint', 'prettier'],
 
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-explicit-any': 'warn',
+    '@typescript-eslint/no-non-null-assertion': 'warn',
+
+    'prettier/prettier': 'warn',
   },
 };

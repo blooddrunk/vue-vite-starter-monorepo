@@ -1,6 +1,7 @@
 import type { MenuItem } from '@/stores/menu';
 import type { AuthInfo, LoginInfo, UserInfo } from '@/typings';
-import { keyBy, pick } from 'lodash';
+
+import { keyBy, pick } from 'lodash-es';
 import { acceptHMRUpdate, defineStore } from 'pinia';
 
 export const useAuthStore = defineStore('auth', () => {
