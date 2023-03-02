@@ -20,7 +20,8 @@
 
 <script lang="tsx" setup>
 import type { ReadonlyFieldsetData, ReadonlyFieldsetRow } from '@/typings';
-import { getPlaceholderForNonValue } from '@/utils/misc';
+
+import { getPlaceholderForNonValue } from '@jn/shared';
 import { get } from 'lodash-es';
 
 const props = withDefaults(

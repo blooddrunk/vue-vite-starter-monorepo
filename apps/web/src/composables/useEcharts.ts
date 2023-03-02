@@ -1,15 +1,13 @@
-import { computed, ref } from 'vue';
-import { EChartsCoreOption } from 'echarts/core';
-import { merge } from 'lodash-es';
-
 import {
   CommonChartProps,
-  MapChartProps,
   CommonChartType,
+  MapChartProps,
   VueEchartsComponent,
-} from '@/utils/chart';
-// import type { ECOption } from '@/plugins/echarts';
+} from '@jn/shared/echarts';
 import { EChartsOption } from 'echarts';
+import { EChartsCoreOption } from 'echarts/core';
+import { merge } from 'lodash-es';
+import { computed, ref } from 'vue';
 
 export const usePieChart = (props: CommonChartProps) =>
   computed<EChartsCoreOption>(() => ({

@@ -17,5 +17,5 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import { toNumber } from '@/utils/math';
+import { toNumber } from '@jn/shared';
 </script>

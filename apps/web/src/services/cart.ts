@@ -1,11 +1,11 @@
-import { CartItem } from '@/typings';
-import { precisionRound } from '@/utils/math';
+import { precisionRound } from '@jn/shared';
 import { random } from 'lodash-es';
+
+import { CartItem } from '@/typings';
 
 export const useCartList = () => {
   return useAxios<CartItem[]>([] as CartItem[], {
     url: 'https://jsonplaceholder.typicode.com/posts',
-    __needValidation: false,
     __transformData: (data: CartItem[]) => {
       return (data || [])
         .map((item) => ({
@@ -23,7 +23,6 @@ export const addCartItem = () => {
   const { execute, ...rest } = useAxios<CartItem>({} as CartItem, {
     url: 'https://jsonplaceholder.typicode.com/posts',
     method: 'post',
-    __needValidation: false,
   });
   return {
     ...rest,
@@ -37,7 +36,6 @@ export const addCartItem = () => {
 export const patchCartItem = () => {
   const { execute, ...rest } = useAxios<CartItem>({} as CartItem, {
     method: 'patch',
-    __needValidation: false,
   });
   return {
     ...rest,
@@ -54,7 +52,6 @@ export const patchCartItem = () => {
 export const removeCartItem = () => {
   const { execute, ...rest } = useAxios<CartItem>({} as CartItem, {
     method: 'delete',
-    __needValidation: false,
   });
   return {
     ...rest,

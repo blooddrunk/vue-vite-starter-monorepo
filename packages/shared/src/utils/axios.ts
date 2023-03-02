@@ -1,39 +1,27 @@
-import { ServerResponse } from '@/typings';
-import { jsonToUrlParams } from '@/utils/misc';
 import type {
   AxiosError,
   AxiosInstance,
   AxiosProgressEvent,
   AxiosRequestConfig,
+  CreateAxiosDefaults,
 } from 'axios';
+
 import { default as axiosDefault } from 'axios';
 import { defaultsDeep, isPlainObject } from 'lodash-es';
 import Nprogress from 'nprogress';
 
+import { jsonToUrlParams } from './misc';
+
 declare module 'axios' {
   export interface AxiosRequestConfig {
-    __cancellable?: boolean | string;
     __showProgress?: boolean;
-    __needValidation?: boolean;
     __urlEncoded?: boolean;
-    __transformData?: boolean | ((data: any, response: AxiosResponse) => any);
+    __validateResponse?:
+      | false
+      | ((data: unknown, response: AxiosResponse) => any);
+    __transformData?: false | ((data: any, response: AxiosResponse) => any);
   }
 }
-
-export const defaultDataTransformer = (data: unknown = {}) => data;
-
-// biz logic
-export const validateResponse = (response: ServerResponse) => {
-  const { errcode = 200, errmsg = '未知错误', ...ret } = response;
-
-  switch (`${errcode}`) {
-    case '200':
-      return ret;
-    default: {
-      throw new Error(errmsg);
-    }
-  }
-};
 
 // http status
 // const validateStatus = (response: AxiosResponse) => {
@@ -46,6 +34,7 @@ export const validateResponse = (response: ServerResponse) => {
 
 export const setupInterceptor = (instance: AxiosInstance) => {
   const onError = (error: AxiosError) => {
+    // * see https://axios-http.com/docs/handling_errors
     if (error.response) {
       // The request was made and the server responded with a status code
       // that falls out of the range of 2xx
@@ -76,31 +65,24 @@ export const setupInterceptor = (instance: AxiosInstance) => {
 
   instance.interceptors.response.use((response) => {
     const {
-      config: { __needValidation = true, __transformData = true },
+      config: { __validateResponse, __transformData },
     } = response;
 
-    if (__needValidation) {
-      try {
-        response.data = validateResponse(response.data as ServerResponse);
-      } catch (error) {
-        (error as any).config = response.config;
-        console.error(error);
-        throw error;
-      }
-    }
-
     try {
+      if (typeof __validateResponse === 'function') {
+        response.data = __validateResponse(response.data, response);
+      }
+
       if (typeof __transformData === 'function') {
         response.data = __transformData(response.data, response);
-      } else if (__transformData === true) {
-        response.data = defaultDataTransformer(response.data);
       }
-
-      return response;
     } catch (error) {
       (error as any).config = response.config;
+      console.error(error);
       throw error;
     }
+
+    return response;
   }, onError);
 };
 
@@ -164,14 +146,20 @@ export const setupProgress = (instance: AxiosInstance) => {
   instance.defaults.onDownloadProgress = onProgress;
 };
 
-const axios = axiosDefault.create({
-  baseURL: import.meta.env.VITE_API_ROOT,
-  headers: {
-    Accept: 'application/json, text/plain, */*',
-  },
-});
+export const createAxios = (config: CreateAxiosDefaults) => {
+  const axios = axiosDefault.create(
+    defaultsDeep(
+      {
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+        },
+      },
+      config
+    )
+  );
 
-setupInterceptor(axios);
-setupProgress(axios);
+  setupInterceptor(axios);
+  setupProgress(axios);
 
-export default axios;
+  return axios;
+};

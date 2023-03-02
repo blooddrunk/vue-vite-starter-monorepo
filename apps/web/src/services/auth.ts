@@ -4,7 +4,8 @@ import type {
   MobileUserInfo,
   UserInfo,
 } from '@/typings';
-import { promiseTimeout } from '@/utils/misc';
+
+import { promiseTimeout } from '@jn/shared';
 
 export const useLogin = () => {
   const data = ref<UserInfo>();

@@ -1,12 +1,10 @@
-import { useAxios } from '@/composables/useAxios';
 import type { CustomizationInfo, CustomizationRequest } from '@/typings';
+
+import { useAxios } from '@/composables/useAxios';
 
 export const useCustomizationDetail = () => {
   const { execute, ...rest } = useAxios<CustomizationInfo>(
-    {} as CustomizationInfo,
-    {
-      __needValidation: false,
-    }
+    {} as CustomizationInfo
   );
   return {
     ...rest,
@@ -38,7 +36,6 @@ export const makeAppointment = () => {
     {
       url: 'https://jsonplaceholder.typicode.com/posts',
       method: 'post',
-      __needValidation: false,
     }
   );
   return {

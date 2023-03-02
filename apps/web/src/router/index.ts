@@ -1,11 +1,10 @@
 import type { BreadcrumbItem } from '@/stores/ui';
 import type { RouteRecordRaw, RouterTyped } from 'vue-router/auto';
 
+import { createNamedEntryForGlobImport } from '@jn/shared';
 import { setupLayouts } from 'virtual:generated-layouts';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import { routes } from 'vue-router/auto/routes';
-
-import { createNamedEntryForGlobImport } from '@/utils/misc';
 
 export const routerHistory = createWebHashHistory(import.meta.env.BASE_URL);
 

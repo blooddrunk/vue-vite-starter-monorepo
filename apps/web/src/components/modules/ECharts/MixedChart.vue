@@ -12,11 +12,12 @@
 </template>
 
 <script lang="ts" setup>
-import { zipWith } from 'lodash-es';
 import type { EChartsOption } from 'echarts';
 
-import { normalizeSeries } from '@/utils/chart';
-import { toPercentage, toCompactDisplayString } from '@/utils/math';
+import { toCompactDisplayString, toPercentage } from '@jn/shared';
+import { normalizeSeries } from '@jn/shared/echarts';
+import { zipWith } from 'lodash-es';
+
 import { C2Item } from '@/services/chart';
 
 const chartStore = useChartStore();

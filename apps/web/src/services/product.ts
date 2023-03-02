@@ -1,13 +1,14 @@
+import type { ProductItem } from '@/typings';
+
+import { random } from 'lodash-es';
+
 import { useAxios } from '@/composables/useAxios';
 import { usePaginatedList } from '@/composables/usePaginatedList';
-import type { ProductItem } from '@/typings';
-import { random } from 'lodash-es';
 
 export const useProductList = () => {
   return usePaginatedList<ProductItem>(
     {
       url: 'https://jsonplaceholder.typicode.com/posts',
-      __needValidation: false,
       __transformData: (data: ProductItem[], { headers }) => {
         return {
           items: (data || []).map((item) => ({
@@ -31,9 +32,7 @@ export const useProductList = () => {
 };
 
 export const useProductDetail = () => {
-  const { execute, ...rest } = useAxios<ProductItem>({} as ProductItem, {
-    __needValidation: false,
-  });
+  const { execute, ...rest } = useAxios<ProductItem>({} as ProductItem);
   return {
     ...rest,
     execute: (id: string) =>

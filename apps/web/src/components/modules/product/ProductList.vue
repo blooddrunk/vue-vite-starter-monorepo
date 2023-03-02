@@ -35,12 +35,11 @@
 <script lang="ts" setup>
 import type { ProductItem } from '@/typings';
 
+import { promiseTimeout } from '@jn/shared';
 import { storeToRefs } from 'pinia';
 
 import MyProductItem from './ProductItem.vue';
 import MyProductItemSkeleton from './ProductItemSkeleton.vue';
-
-import { promiseTimeout } from '@/utils/misc';
 
 const product = useProductStore();
 const {

@@ -1,14 +1,15 @@
-import { defineStore, acceptHMRUpdate } from 'pinia';
-import type { RouteNamedMap } from 'vue-router/auto/routes';
 import type { RouteLocationNamedRaw } from 'vue-router/auto';
+import type { RouteNamedMap } from 'vue-router/auto/routes';
+
+import { flattenTree } from '@jn/shared';
+import { acceptHMRUpdate, defineStore } from 'pinia';
 
 import {
   getFirstNavigableMenu as _getFirstNavigableMenu,
+  allMenuList,
   menuLookup as rawMenuLookup,
   menuPerSystem as rawMenuPerSystem,
-  allMenuList,
 } from '@/utils/biz/menu';
-import { flattenTree } from '@/utils/misc';
 
 const availableSystemList = [
   { label: '默认系统', value: 'main' },

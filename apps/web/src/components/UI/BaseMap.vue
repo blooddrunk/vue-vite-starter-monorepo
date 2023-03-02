@@ -15,7 +15,7 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import type { MapChartProps } from '@/utils/chart';
+import type { MapChartProps } from '@jn/shared/echarts';
 
 const props = withDefaults(defineProps<MapChartProps>(), {
   autoResize: true,

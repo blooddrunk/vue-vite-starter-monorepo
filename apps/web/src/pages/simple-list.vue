@@ -32,8 +32,8 @@
 </template>
 
 <script lang="ts" setup>
+import { format, parseISO } from 'date-fns';
 import { useForm } from 'vee-validate';
-import { parseISO, format } from 'date-fns';
 
 definePage({
   meta: {
@@ -61,7 +61,6 @@ const { fetchListAndReset, elementTableProps, isLoading } =
         items: data?.hits,
         total: data?.nbHits,
       }),
-      __needValidation: false,
     },
     {
       filter,

@@ -1,8 +1,4 @@
-/**
- * stolen from https://github.com/pikax/vue-composable
- */
-
-import { ref, computed, Ref } from 'vue';
+import { computed, ref, Ref } from 'vue';
 
 import { usePagination, UsePaginationOptions } from './usePagination';
 

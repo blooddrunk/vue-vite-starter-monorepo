@@ -13,12 +13,13 @@ import Components from 'unplugin-vue-components/vite';
 import VueMacros from 'unplugin-vue-macros/vite';
 import { VueRouterAutoImports } from 'unplugin-vue-router';
 import VueRouter from 'unplugin-vue-router/vite';
-import { loadEnv } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import Layouts from 'vite-plugin-vue-layouts';
-import TypeImports from 'vite-plugin-vue-type-imports';
+
+// import TypeImports from 'vite-plugin-vue-type-imports';
 
 // https://vitejs.dev/config/
-export default ({ mode }) => {
+export default defineConfig(({ mode }) => {
   const isDev = mode === 'development';
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
@@ -52,7 +53,7 @@ export default ({ mode }) => {
         },
 
         // ! this won't always work, use vite-plugin-vue-type-imports temporarily
-        betterDefine: false,
+        betterDefine: true,
       }),
 
       Layouts(),
@@ -90,6 +91,9 @@ export default ({ mode }) => {
           '@vueuse/core',
           'vue/macros',
           VueRouterAutoImports,
+          {
+            '@jn/shared': ['usePagination', 'useArrayPagination'],
+          },
         ],
         dirs: ['./src/composables/**', './src/stores/**', './src/services/**'],
         vueTemplate: true,
@@ -100,7 +104,7 @@ export default ({ mode }) => {
         },
       }),
 
-      TypeImports(),
+      // TypeImports(),
     ],
 
     server: {
@@ -117,4 +121,4 @@ export default ({ mode }) => {
       },
     },
   };
-};
+});

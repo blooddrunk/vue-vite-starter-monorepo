@@ -3,13 +3,14 @@ import type { GeoJSONCompressed } from 'echarts/types/src/coord/geo/geoTypes';
 
 import { merge } from 'lodash-es';
 import { unref } from 'vue';
+import ECharts from 'vue-echarts';
 
 import { MaybeRef } from './types';
 
 // import type { SeriesEncodeOptionMixin } from 'echarts/types/src/util/types';
 
+export type VueEchartsComponent = InstanceType<typeof ECharts>;
 export type ChartTheme = 'primary' | 'secondary' | 'dark' | Record<string, any>;
-
 export type CommonChartType = 'pie' | 'bar' | 'line' | 'scatter' | 'map';
 
 export interface CommonChartProps {

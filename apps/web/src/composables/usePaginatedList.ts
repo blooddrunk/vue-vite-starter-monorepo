@@ -1,17 +1,17 @@
-import {
-  ref,
-  computed,
-  watch,
-  readonly,
-  unref,
-  shallowRef,
-  UnwrapRef,
-} from 'vue';
+import type { UsePaginationOptions } from '@/composables/usePagination';
+
+import { trimValues } from '@jn/shared';
 import { AxiosRequestConfig } from 'axios';
 import { cloneDeep, merge } from 'lodash-es';
-
-import { trimValues } from '@/utils/misc';
-import type { UsePaginationOptions } from '@/composables/usePagination';
+import {
+  computed,
+  readonly,
+  ref,
+  shallowRef,
+  unref,
+  UnwrapRef,
+  watch,
+} from 'vue';
 
 export type Pagination = ReturnType<typeof usePagination>;
 

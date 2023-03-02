@@ -1,7 +1,7 @@
-import { mergeWith } from 'lodash-es';
+import type { MenuItem, SystemValue } from '@/stores/menu';
 
-import type { SystemValue, MenuItem } from '@/stores/menu';
-import { createNamedMapForGlobImport } from '@/utils/misc';
+import { createNamedMapForGlobImport } from '@jn/shared';
+import { mergeWith } from 'lodash-es';
 
 export const createMenuLookup = (menuList: MenuItem[], system: SystemValue) => {
   const byId = {} as Record<string, MenuItem>;

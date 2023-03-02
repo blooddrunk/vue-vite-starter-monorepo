@@ -92,7 +92,6 @@ const { data, execute, isLoading } = useAxios<ListItem[]>(
   {
     url: 'https://hn.algolia.com/api/v1/search',
     __transformData: (data: any) => data?.hits ?? [],
-    __needValidation: false,
   },
   { immediate: false }
 );

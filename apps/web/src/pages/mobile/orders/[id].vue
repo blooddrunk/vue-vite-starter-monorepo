@@ -13,7 +13,7 @@
         readonly
       ></CartList>
 
-      <van-cell-group class="!mt-6 !mx-0" inset>
+      <van-cell-group class="!mx-0 !mt-6" inset>
         <van-cell title="商品金额">
           <span>
             ￥
@@ -100,10 +100,10 @@
 </template>
 
 <script lang="ts" setup>
-import { showToast, showFailToast, showConfirmDialog } from 'vant';
 import type { ActionSheetAction } from 'vant';
 
-import { getPlaceholderForNonValue } from '@/utils/misc';
+import { getPlaceholderForNonValue } from '@jn/shared';
+import { showConfirmDialog, showFailToast, showToast } from 'vant';
 
 definePage({
   meta: {

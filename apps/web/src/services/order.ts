@@ -1,13 +1,13 @@
+import { precisionFixed, precisionRound } from '@jn/shared';
+import { random, sample } from 'lodash-es';
+
 import { useAxios } from '@/composables/useAxios';
 import { CartItem, OrderInfo, OrderItem } from '@/typings';
-import { precisionFixed, precisionRound } from '@/utils/math';
-import { random, sample } from 'lodash-es';
 
 export const placeOrder = () => {
   const { execute, ...rest } = useAxios<OrderInfo>({} as OrderInfo, {
     url: 'https://jsonplaceholder.typicode.com/posts',
     method: 'post',
-    __needValidation: false,
   });
   return {
     ...rest,
@@ -21,7 +21,6 @@ export const placeOrder = () => {
 export const useOrderList = () => {
   return useAxios<OrderItem[]>([], {
     url: 'https://jsonplaceholder.typicode.com/posts',
-    __needValidation: false,
     __transformData: (data) => {
       return [...Array(10).keys()].map((id) => {
         const items = (data as CartItem[])
@@ -52,7 +51,6 @@ export const cancelOrder = () => {
   const { execute, ...rest } = useAxios<OrderItem>({} as OrderItem, {
     url: 'https://jsonplaceholder.typicode.com/posts',
     method: 'post',
-    __needValidation: false,
   });
   return {
     ...rest,

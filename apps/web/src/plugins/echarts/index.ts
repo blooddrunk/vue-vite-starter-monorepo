@@ -1,6 +1,14 @@
 import type { UserPlugin } from '@/typings';
-import { createNamedEntryForGlobImport } from '@/utils/misc';
+
+import { createNamedEntryForGlobImport } from '@jn/shared';
+
 import 'echarts-liquidfill';
+
+import type { ComposeOption } from 'echarts/core';
+// import * as echarts from 'echarts';
+import type { GeoJSONSourceInput } from 'echarts/types/src/coord/geo/geoTypes';
+import type { JsonObject } from 'type-fest';
+
 import {
   BarChart,
   BarSeriesOption,
@@ -28,11 +36,7 @@ import {
   TooltipComponentOption,
 } from 'echarts/components';
 import { registerMap, registerTheme, use } from 'echarts/core';
-import type { ComposeOption } from 'echarts/core';
 import { CanvasRenderer } from 'echarts/renderers';
-// import * as echarts from 'echarts';
-import type { GeoJSONSourceInput } from 'echarts/types/src/coord/geo/geoTypes';
-import type { JsonObject } from 'type-fest';
 import VueEcharts from 'vue-echarts';
 
 export type ECOption = ComposeOption<
