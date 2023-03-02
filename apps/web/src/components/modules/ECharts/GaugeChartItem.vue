@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center text-lg">
-    <div class="aspect-w-1 aspect-h-1 w-full relative">
+    <div class="aspect-w-1 aspect-h-1 relative w-full">
       <ECharts ref="chartRef" autoresize :option="chartOption"></ECharts>
     </div>
 
@@ -20,8 +20,9 @@
 </template>
 
 <script lang="ts" setup>
+import { toPercentage } from '@jn/shared';
+
 import { C1Item } from '@/services/chart';
-import { toPercentage } from '@/utils/math';
 
 type Props = {
   item: C1Item;

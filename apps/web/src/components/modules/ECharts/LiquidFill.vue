@@ -1,10 +1,10 @@
 <template>
   <BorderedCard title="LiquidFill">
-    <div class="p-2 grid grid-cols-4 2xl:gap-2 gap-1">
+    <div class="grid grid-cols-4 gap-1 p-2 2xl:gap-2">
       <div
         v-for="item in data"
         :key="item.label1"
-        class="aspect-w-1 aspect-h-1 w-full relative"
+        class="aspect-w-1 aspect-h-1 relative w-full"
       >
         <ECharts
           ref="chartRef"
@@ -13,9 +13,9 @@
         ></ECharts>
 
         <div
-          class="absolute inset-0 flex flex-col items-center justify-center text-2xl 3xl:text-3xl"
+          class="3xl:text-3xl absolute inset-0 flex flex-col items-center justify-center text-2xl"
         >
-          <div class="text-emerald-800 font-semibold">
+          <div class="font-semibold text-emerald-800">
             {{ toCompactDisplayString(item.value2) }}
           </div>
           <div class="2x:mt-3 mt-2 text-cyan-200">
@@ -28,12 +28,13 @@
 </template>
 
 <script setup lang="ts">
-import { L2Item } from '@/services/chart';
 import {
-  toPercentage,
-  toCompactDisplayString,
   precisionRound,
-} from '@/utils/math';
+  toCompactDisplayString,
+  toPercentage,
+} from '@jn/shared';
+
+import { L2Item } from '@/services/chart.js';
 
 const chartStore = useChartStore();
 

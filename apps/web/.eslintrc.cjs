@@ -1,4 +1,4 @@
-require('@jn/eslint-config/patch/modern-module-resolution');
+require('@jn/eslint-config/patch');
 
 module.exports = {
   root: true,

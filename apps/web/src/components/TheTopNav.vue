@@ -20,11 +20,12 @@
 </template>
 
 <script lang="ts" setup>
+import type { SystemValue } from '@/stores/menu';
+
+import { promiseTimeout } from '@jn/shared';
 import { storeToRefs } from 'pinia';
 
-import type { SystemValue } from '@/stores/menu';
 import { getRouteOfMenuItem } from '@/utils/biz/menu';
-import { promiseTimeout } from '@/utils/misc';
 
 const menuStore = useMenuStore();
 const authStore = useAuthStore();

@@ -27,9 +27,11 @@
 </template>
 
 <script lang="tsx" setup>
+import type { Column } from 'element-plus';
+
+import { format, parseISO } from 'date-fns';
+import { TableV2FixedDir } from 'element-plus';
 import { useForm } from 'vee-validate';
-import { parseISO, format } from 'date-fns';
-import { Column, TableV2FixedDir } from 'element-plus';
 
 definePage({
   meta: {

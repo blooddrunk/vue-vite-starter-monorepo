@@ -2,18 +2,18 @@
   <BorderedCard title="Line">
     <div class="aspect-w-4 aspect-h-1">
       <BaseChart
+        type="line"
+        :option="option"
         :dimensions="dimensions"
         :data="dataSource"
-        :option="option"
-        type="line"
       ></BaseChart>
     </div>
   </BorderedCard>
 </template>
 
 <script lang="ts" setup>
+import { normalizeSeries } from '@jn/shared/echarts';
 import { ref } from 'vue';
-import { normalizeSeries } from '@/utils/chart';
 
 const random = () => {
   return Math.round(300 + Math.random() * 700) / 10;

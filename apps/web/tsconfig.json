@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@jn/tsconfig/base.json",
   "compilerOptions": {
     "types": [
       "vue/macros-global",
@@ -14,9 +14,11 @@
     "paths": {
       "@/*": ["src/*"],
       "@/typings": ["src/utils/typings"],
-      "@/modules/*": ["src/components/modules/*"]
+      "@/modules/*": ["src/components/modules/*"],
+      "@jn/shared/*": ["../../packages/shared/src/*"]
     }
   },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "vueCompilerOptions": {
     "plugins": [
       "@vue-macros/volar/define-model",
@@ -26,7 +28,5 @@
       "@vue-macros/volar/define-slots",
       "@vue-macros/volar/export-props"
     ]
-  },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  }
 }

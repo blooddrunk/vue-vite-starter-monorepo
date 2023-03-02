@@ -13,7 +13,7 @@ export const storeKeys = [
   '丽水市',
 ] as const;
 
-export type StoreKeys = typeof storeKeys[number];
+export type StoreKeys = (typeof storeKeys)[number];
 
 export type L1Item = {
   label1?: string;

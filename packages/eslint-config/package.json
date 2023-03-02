@@ -1,7 +1,8 @@
 {
   "name": "@jn/eslint-config",
   "version": "0.0.0",
-  "main": "index.cjs",
+  "private": true,
+  "main": "./index.cjs",
   "exports": {
     ".": "./index.cjs",
     "./patch": "./patch.cjs",
@@ -9,12 +10,15 @@
   },
   "dependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
-    "@vue/eslint-config-typescript": "^11.0.2",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@vue/eslint-config-prettier": "^7.1.0"
+  }
 }
