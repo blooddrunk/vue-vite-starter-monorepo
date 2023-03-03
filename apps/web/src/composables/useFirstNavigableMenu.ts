@@ -1,5 +1,6 @@
 import type { MenuItem } from '@/stores/menu';
-import { getFirstNavigableMenu, getRouteOfMenuItem } from '@/utils/biz/menu';
+
+import { getFirstNavigableMenu, getRouteOfMenuItem } from '@/utils/menu';
 
 // TODO: narrow route name type
 export type UseFirstNavigableMenuOptions = {

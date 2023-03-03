@@ -1,7 +1,8 @@
 import type { RouterTyped } from 'vue-router/auto';
+
 import { ElNotification } from 'element-plus';
 
-import { getRouteOfMenuItem } from '@/utils/biz/menu';
+import { getRouteOfMenuItem } from '@/utils/menu';
 
 const notifyPermission = (message: string) =>
   ElNotification.warning({

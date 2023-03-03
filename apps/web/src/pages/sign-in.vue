@@ -153,7 +153,7 @@ import { storeToRefs } from 'pinia';
 import { useForm } from 'vee-validate';
 
 import { LoginInfo } from '@/typings';
-import { getRouteOfMenuItem } from '@/utils/biz/menu';
+import { getRouteOfMenuItem } from '@/utils/menu';
 
 definePage({
   meta: {

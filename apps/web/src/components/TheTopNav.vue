@@ -25,7 +25,7 @@ import type { SystemValue } from '@/stores/menu';
 import { promiseTimeout } from '@jn/shared';
 import { storeToRefs } from 'pinia';
 
-import { getRouteOfMenuItem } from '@/utils/biz/menu';
+import { getRouteOfMenuItem } from '@/utils/menu';
 
 const menuStore = useMenuStore();
 const authStore = useAuthStore();

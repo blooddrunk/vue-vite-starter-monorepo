@@ -9,7 +9,7 @@ import {
   allMenuList,
   menuLookup as rawMenuLookup,
   menuPerSystem as rawMenuPerSystem,
-} from '@/utils/biz/menu';
+} from '@/utils/menu';
 
 const availableSystemList = [
   { label: '默认系统', value: 'main' },
