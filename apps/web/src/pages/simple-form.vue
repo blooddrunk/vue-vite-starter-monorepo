@@ -40,8 +40,9 @@
 </template>
 
 <script lang="ts" setup>
-import { Product } from '@/typings';
 import { ElMessage } from 'element-plus';
+
+import { Product } from '@/typings';
 
 definePage({
   meta: {
@@ -59,6 +60,6 @@ const getDeleteAction = (row: Product) => {
 };
 
 const handleSubmit = () => {
-  simpleFormStore.fetchProducts();
+  // simpleFormStore.fetchProducts();
 };
 </script>

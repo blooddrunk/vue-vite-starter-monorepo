@@ -194,7 +194,7 @@ export function useAxios<T = any, R = AxiosResponse<T>, D = any>(
       data.value = result;
       options.onSuccess?.(result);
     } catch (e: any) {
-      console.error(error.value);
+      console.error(e);
       error.value = e;
       options.onError?.(e);
     } finally {

@@ -1,10 +1,10 @@
 <template>
   <router-link
-    class="mt-3 block rounded-md bg-white p-2 shadow shadow-light"
+    class="shadow-light mt-3 block rounded-md bg-white p-2 shadow"
     :to="routeLocation"
   >
     <header
-      class="mb-2.5 flex items-center justify-between border-b border-primary pb-1.5 text-sm font-bold"
+      class="border-primary mb-2.5 flex items-center justify-between border-b pb-1.5 text-sm font-bold"
     >
       <span>
         订单编号：
@@ -46,8 +46,9 @@
 
 <script lang="ts" setup>
 import type { OrderItem } from '@/typings';
+import type { RouteLocationRaw } from 'vue-router/auto';
+
 import { format } from 'date-fns';
-import type { RouteLocationRaw } from 'vue-router';
 
 type Props = {
   item: OrderItem;
@@ -66,7 +67,7 @@ const statusClass = computed(
 );
 
 const routeLocation: RouteLocationRaw = {
-  name: 'mobile-orders-id',
+  name: '/mobile/orders/[id]',
   params: {
     id: props.item.orderNumber,
   },

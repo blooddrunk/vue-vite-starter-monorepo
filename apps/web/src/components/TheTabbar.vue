@@ -18,20 +18,19 @@
 </template>
 
 <script lang="ts" setup>
-import { shallowRef, ref, watch } from 'vue';
+import { ref, shallowRef, watch } from 'vue';
 import { useRoute } from 'vue-router';
-
-import IconMdiApps from '~icons/mdi/apps';
-import IconMdiGiftOpen from '~icons/mdi/gift-open';
-import IconMdiCart from '~icons/mdi/cart';
 import IconMdiAccount from '~icons/mdi/account';
+import IconMdiApps from '~icons/mdi/apps';
+import IconMdiCart from '~icons/mdi/cart';
+import IconMdiGiftOpen from '~icons/mdi/gift-open';
 
 const route = useRoute();
 const tabbarItems = shallowRef([
   {
     name: '分类',
     path: '/mobile/category',
-    routeName: 'mobile-category',
+    routeName: '/mobile/category',
     icon: IconMdiApps,
     dot: false,
     badge: '',
@@ -39,7 +38,7 @@ const tabbarItems = shallowRef([
   {
     name: '定制',
     path: '/mobile/customization',
-    routeName: 'mobile-customization',
+    routeName: '/mobile/customization',
     icon: IconMdiGiftOpen,
     dot: false,
     badge: '',
@@ -47,7 +46,7 @@ const tabbarItems = shallowRef([
   {
     name: '购物车',
     path: '/mobile/cart',
-    routeName: 'mobile-cart',
+    routeName: '/mobile/cart',
     icon: IconMdiCart,
     dot: false,
     badge: '',
@@ -55,7 +54,7 @@ const tabbarItems = shallowRef([
   {
     name: '我的',
     path: '/mobile/user',
-    routeName: 'mobile-user',
+    routeName: '/mobile/user',
     icon: IconMdiAccount,
     dot: false,
     badge: '',

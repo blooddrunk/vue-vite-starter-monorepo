@@ -18,6 +18,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-non-null-assertion': 'warn',
 
+    'vue/multi-word-component-names': 'off',
     'vue/max-attributes-per-line': 'off', // respect prettier
     'vue/html-self-closing': 'off',
   },

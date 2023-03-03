@@ -86,5 +86,6 @@ export type Store = Partial<{
 export const useDataByCity = () => {
   return useAxios<Store>({} as Store, {
     url: `${import.meta.env.VITE_PUBLIC_PATH}datastore.json?_t=${Date.now()}`,
+    __transformData: false,
   });
 };

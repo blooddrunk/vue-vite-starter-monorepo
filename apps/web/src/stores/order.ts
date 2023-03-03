@@ -1,5 +1,6 @@
-import { OrderInfo } from '@/typings';
 import { acceptHMRUpdate, defineStore } from 'pinia';
+
+import { OrderInfo } from '@/typings';
 
 const getDefaultOrderInfo = () => ({
   items: [],

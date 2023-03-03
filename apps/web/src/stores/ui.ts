@@ -1,5 +1,6 @@
-import { defineStore, acceptHMRUpdate } from 'pinia';
 import type { RouteNamedMap } from 'vue-router/auto/routes';
+
+import { acceptHMRUpdate, defineStore } from 'pinia';
 
 export type BreadcrumbItem = {
   title: string;

@@ -19,32 +19,38 @@ export const placeOrder = () => {
 };
 
 export const useOrderList = () => {
-  return useAxios<OrderItem[]>([], {
-    url: 'https://jsonplaceholder.typicode.com/posts',
-    __transformData: (data) => {
-      return [...Array(10).keys()].map((id) => {
-        const items = (data as CartItem[])
-          .slice(0, random(1, 3))
-          .map((item) => ({
-            ...item,
-            price: precisionRound(random(1, 500, true)),
-            thumbnail: 'http://via.placeholder.com/240x240',
-            quantity: random(1, 10),
-          }));
+  return useAxios<OrderItem[]>(
+    [],
+    {
+      url: 'https://jsonplaceholder.typicode.com/posts',
+      __transformData: (data) => {
+        return [...Array(10).keys()].map((id) => {
+          const items = (data as CartItem[])
+            .slice(0, random(1, 3))
+            .map((item) => ({
+              ...item,
+              price: precisionRound(random(1, 500, true)),
+              thumbnail: 'http://via.placeholder.com/240x240',
+              quantity: random(1, 10),
+            }));
 
-        return {
-          orderNumber: String(id),
-          orderTime: Date.now(),
-          orderStatus: sample(['已预约', '已下单', '已办理', '已撤单']),
-          quantity: items.reduce((acc, item) => item.quantity + acc, 0),
-          totalPrice: precisionFixed(
-            items.reduce((acc, item) => item.quantity * item.price + acc, 0)
-          ),
-          items,
-        };
-      });
+          return {
+            orderNumber: String(id),
+            orderTime: Date.now(),
+            orderStatus: sample(['已预约', '已下单', '已办理', '已撤单']),
+            quantity: items.reduce((acc, item) => item.quantity + acc, 0),
+            totalPrice: precisionFixed(
+              items.reduce((acc, item) => item.quantity * item.price + acc, 0)
+            ),
+            items,
+          };
+        });
+      },
     },
-  });
+    {
+      immediate: false,
+    }
+  );
 };
 
 export const cancelOrder = () => {

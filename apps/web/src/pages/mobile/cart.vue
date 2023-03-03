@@ -22,7 +22,7 @@
 
       <router-link v-slot="{ navigate }" custom to="/mobile/order">
         <van-button
-          class="!ml-auto min-w-28"
+          class="min-w-28 !ml-auto"
           type="primary"
           round
           :disabled="!cart.hasCheckedItems"
@@ -36,8 +36,8 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
+import { computed, ref, watch } from 'vue';
 
 definePage({
   meta: {

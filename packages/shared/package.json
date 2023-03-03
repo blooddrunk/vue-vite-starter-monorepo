@@ -17,6 +17,7 @@
     "@vueuse/core": "*",
     "axios": "*",
     "echarts": "*",
+    "immer": "*",
     "nprogress": "*",
     "vue": "*",
     "vue-echarts": "*"
@@ -27,6 +28,7 @@
     "@vueuse/core": "^9.12.0",
     "axios": "^1.3.4",
     "echarts": "^5.4.1",
+    "immer": "^9.0.19",
     "nprogress": "^0.2.0",
     "vue": "^3.2.47",
     "vue-echarts": "^6.5.4"

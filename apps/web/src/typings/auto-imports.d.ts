@@ -15,6 +15,7 @@ declare global {
   const addCartItem: typeof import('../services/cart')['addCartItem']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
+  const axios: typeof import('../composables/useAxios')['axios']
   const cancelOrder: typeof import('../services/order')['cancelOrder']
   const computed: typeof import('vue')['computed']
   const computedAsync: typeof import('@vueuse/core')['computedAsync']
@@ -125,7 +126,7 @@ declare global {
   const useArrayFindLast: typeof import('@vueuse/core')['useArrayFindLast']
   const useArrayJoin: typeof import('@vueuse/core')['useArrayJoin']
   const useArrayMap: typeof import('@vueuse/core')['useArrayMap']
-  const useArrayPagination: typeof import('../composables/useArrayPagination')['useArrayPagination']
+  const useArrayPagination: typeof import('@jn/shared')['useArrayPagination']
   const useArrayReduce: typeof import('@vueuse/core')['useArrayReduce']
   const useArraySome: typeof import('@vueuse/core')['useArraySome']
   const useArrayUnique: typeof import('@vueuse/core')['useArrayUnique']
@@ -144,7 +145,6 @@ declare global {
   const useCached: typeof import('@vueuse/core')['useCached']
   const useCartList: typeof import('../services/cart')['useCartList']
   const useCartStore: typeof import('../stores/cart')['useCartStore']
-  const useCartesianChart: typeof import('../composables/useEcharts')['useCartesianChart']
   const useChartStore: typeof import('../stores/chart')['useChartStore']
   const useClipboard: typeof import('@vueuse/core')['useClipboard']
   const useCloned: typeof import('@vueuse/core')['useCloned']
@@ -171,7 +171,7 @@ declare global {
   const useDocumentVisibility: typeof import('@vueuse/core')['useDocumentVisibility']
   const useDraggable: typeof import('@vueuse/core')['useDraggable']
   const useDropZone: typeof import('@vueuse/core')['useDropZone']
-  const useEcharts: typeof import('../composables/useEcharts')['useEcharts']
+  const useEcharts: typeof import('@jn/shared/echarts')['useEcharts']
   const useElementBounding: typeof import('@vueuse/core')['useElementBounding']
   const useElementByPoint: typeof import('@vueuse/core')['useElementByPoint']
   const useElementHover: typeof import('@vueuse/core')['useElementHover']
@@ -197,7 +197,6 @@ declare global {
   const useHead: typeof import('@vueuse/head')['useHead']
   const useIdle: typeof import('@vueuse/core')['useIdle']
   const useImage: typeof import('@vueuse/core')['useImage']
-  const useImmer: typeof import('../composables/useImmer')['useImmer']
   const useInfiniteScroll: typeof import('@vueuse/core')['useInfiniteScroll']
   const useIntersectionObserver: typeof import('@vueuse/core')['useIntersectionObserver']
   const useInterval: typeof import('@vueuse/core')['useInterval']
@@ -208,7 +207,6 @@ declare global {
   const useLogin: typeof import('../services/auth')['useLogin']
   const useMagicKeys: typeof import('@vueuse/core')['useMagicKeys']
   const useManualRefHistory: typeof import('@vueuse/core')['useManualRefHistory']
-  const useMapChart: typeof import('../composables/useEcharts')['useMapChart']
   const useMediaControls: typeof import('@vueuse/core')['useMediaControls']
   const useMediaQuery: typeof import('@vueuse/core')['useMediaQuery']
   const useMemoize: typeof import('@vueuse/core')['useMemoize']
@@ -233,10 +231,9 @@ declare global {
   const useOrderStore: typeof import('../stores/order')['useOrderStore']
   const usePageLeave: typeof import('@vueuse/core')['usePageLeave']
   const usePaginatedList: typeof import('../composables/usePaginatedList')['usePaginatedList']
-  const usePagination: typeof import('../composables/usePagination')['usePagination']
+  const usePagination: typeof import('@jn/shared')['usePagination']
   const useParallax: typeof import('@vueuse/core')['useParallax']
   const usePermission: typeof import('@vueuse/core')['usePermission']
-  const usePieChart: typeof import('../composables/useEcharts')['usePieChart']
   const usePointer: typeof import('@vueuse/core')['usePointer']
   const usePointerLock: typeof import('@vueuse/core')['usePointerLock']
   const usePointerSwipe: typeof import('@vueuse/core')['usePointerSwipe']
@@ -341,6 +338,7 @@ declare module 'vue' {
     readonly addCartItem: UnwrapRef<typeof import('../services/cart')['addCartItem']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
+    readonly axios: UnwrapRef<typeof import('../composables/useAxios')['axios']>
     readonly cancelOrder: UnwrapRef<typeof import('../services/order')['cancelOrder']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly computedAsync: UnwrapRef<typeof import('@vueuse/core')['computedAsync']>
@@ -451,7 +449,7 @@ declare module 'vue' {
     readonly useArrayFindLast: UnwrapRef<typeof import('@vueuse/core')['useArrayFindLast']>
     readonly useArrayJoin: UnwrapRef<typeof import('@vueuse/core')['useArrayJoin']>
     readonly useArrayMap: UnwrapRef<typeof import('@vueuse/core')['useArrayMap']>
-    readonly useArrayPagination: UnwrapRef<typeof import('../composables/useArrayPagination')['useArrayPagination']>
+    readonly useArrayPagination: UnwrapRef<typeof import('@jn/shared')['useArrayPagination']>
     readonly useArrayReduce: UnwrapRef<typeof import('@vueuse/core')['useArrayReduce']>
     readonly useArraySome: UnwrapRef<typeof import('@vueuse/core')['useArraySome']>
     readonly useArrayUnique: UnwrapRef<typeof import('@vueuse/core')['useArrayUnique']>
@@ -470,7 +468,6 @@ declare module 'vue' {
     readonly useCached: UnwrapRef<typeof import('@vueuse/core')['useCached']>
     readonly useCartList: UnwrapRef<typeof import('../services/cart')['useCartList']>
     readonly useCartStore: UnwrapRef<typeof import('../stores/cart')['useCartStore']>
-    readonly useCartesianChart: UnwrapRef<typeof import('../composables/useEcharts')['useCartesianChart']>
     readonly useChartStore: UnwrapRef<typeof import('../stores/chart')['useChartStore']>
     readonly useClipboard: UnwrapRef<typeof import('@vueuse/core')['useClipboard']>
     readonly useCloned: UnwrapRef<typeof import('@vueuse/core')['useCloned']>
@@ -497,7 +494,7 @@ declare module 'vue' {
     readonly useDocumentVisibility: UnwrapRef<typeof import('@vueuse/core')['useDocumentVisibility']>
     readonly useDraggable: UnwrapRef<typeof import('@vueuse/core')['useDraggable']>
     readonly useDropZone: UnwrapRef<typeof import('@vueuse/core')['useDropZone']>
-    readonly useEcharts: UnwrapRef<typeof import('../composables/useEcharts')['useEcharts']>
+    readonly useEcharts: UnwrapRef<typeof import('@jn/shared/echarts')['useEcharts']>
     readonly useElementBounding: UnwrapRef<typeof import('@vueuse/core')['useElementBounding']>
     readonly useElementByPoint: UnwrapRef<typeof import('@vueuse/core')['useElementByPoint']>
     readonly useElementHover: UnwrapRef<typeof import('@vueuse/core')['useElementHover']>
@@ -523,7 +520,6 @@ declare module 'vue' {
     readonly useHead: UnwrapRef<typeof import('@vueuse/head')['useHead']>
     readonly useIdle: UnwrapRef<typeof import('@vueuse/core')['useIdle']>
     readonly useImage: UnwrapRef<typeof import('@vueuse/core')['useImage']>
-    readonly useImmer: UnwrapRef<typeof import('../composables/useImmer')['useImmer']>
     readonly useInfiniteScroll: UnwrapRef<typeof import('@vueuse/core')['useInfiniteScroll']>
     readonly useIntersectionObserver: UnwrapRef<typeof import('@vueuse/core')['useIntersectionObserver']>
     readonly useInterval: UnwrapRef<typeof import('@vueuse/core')['useInterval']>
@@ -534,7 +530,6 @@ declare module 'vue' {
     readonly useLogin: UnwrapRef<typeof import('../services/auth')['useLogin']>
     readonly useMagicKeys: UnwrapRef<typeof import('@vueuse/core')['useMagicKeys']>
     readonly useManualRefHistory: UnwrapRef<typeof import('@vueuse/core')['useManualRefHistory']>
-    readonly useMapChart: UnwrapRef<typeof import('../composables/useEcharts')['useMapChart']>
     readonly useMediaControls: UnwrapRef<typeof import('@vueuse/core')['useMediaControls']>
     readonly useMediaQuery: UnwrapRef<typeof import('@vueuse/core')['useMediaQuery']>
     readonly useMemoize: UnwrapRef<typeof import('@vueuse/core')['useMemoize']>
@@ -559,10 +554,9 @@ declare module 'vue' {
     readonly useOrderStore: UnwrapRef<typeof import('../stores/order')['useOrderStore']>
     readonly usePageLeave: UnwrapRef<typeof import('@vueuse/core')['usePageLeave']>
     readonly usePaginatedList: UnwrapRef<typeof import('../composables/usePaginatedList')['usePaginatedList']>
-    readonly usePagination: UnwrapRef<typeof import('../composables/usePagination')['usePagination']>
+    readonly usePagination: UnwrapRef<typeof import('@jn/shared')['usePagination']>
     readonly useParallax: UnwrapRef<typeof import('@vueuse/core')['useParallax']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
-    readonly usePieChart: UnwrapRef<typeof import('../composables/useEcharts')['usePieChart']>
     readonly usePointer: UnwrapRef<typeof import('@vueuse/core')['usePointer']>
     readonly usePointerLock: UnwrapRef<typeof import('@vueuse/core')['usePointerLock']>
     readonly usePointerSwipe: UnwrapRef<typeof import('@vueuse/core')['usePointerSwipe']>

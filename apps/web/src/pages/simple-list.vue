@@ -1,7 +1,12 @@
 <template>
   <section>
     <el-form inline @submit="handleSearch">
-      <BaseInput name="query" label="Query" :show-label="false"></BaseInput>
+      <BaseInput
+        name="query"
+        label="Query"
+        :show-label="false"
+        clearable
+      ></BaseInput>
 
       <el-form-item>
         <BaseSearchButton :loading="isLoading"></BaseSearchButton>

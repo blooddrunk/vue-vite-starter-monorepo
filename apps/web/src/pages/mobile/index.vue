@@ -1,3 +1,7 @@
+<template>
+  <div></div>
+</template>
+
 <script lang="ts" setup>
 definePage({
   redirect: {

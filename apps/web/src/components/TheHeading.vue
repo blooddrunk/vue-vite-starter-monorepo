@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="h-[var(--app-header-height)] flex-shrink-0 flex items-center p-4 bg-primary"
+    class="bg-primary flex h-[var(--app-header-height)] flex-shrink-0 items-center p-4"
   >
     <AppLogo is-link></AppLogo>
 
@@ -38,7 +38,7 @@ const handleCommand = async (command: string) => {
   switch (command) {
     case 'logout':
       await authStore.logout();
-      router.push({ name: 'sign-in' });
+      router.push({ name: '/sign-in' });
       break;
 
     default:

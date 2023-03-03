@@ -1,4 +1,5 @@
 import type { Product } from '@/typings';
+
 import { ElMessage } from 'element-plus';
 import { acceptHMRUpdate, defineStore } from 'pinia';
 
@@ -18,7 +19,7 @@ export const useSimpleFormStore = defineStore('simple-form', () => {
     fetchProducts,
     addProduct: async (product: Product) => {
       await addProduct(product);
-      products.value.unshift(product);
+      products.value = [product, ...products.value];
     },
     removeProduct: async (product: Product) => {
       const { errorMessage } = await removeProduct(product);

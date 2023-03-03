@@ -111,6 +111,7 @@ definePage({
     title: '订单详情',
     canNavBack: true,
   },
+  props: true,
 });
 
 const props = defineProps<{

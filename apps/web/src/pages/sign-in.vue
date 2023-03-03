@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex h-screen bg-primary bg-[radial-gradient(var(--color-primary),var(--color-tertiary))]"
+    class="bg-primary relative flex h-screen bg-[radial-gradient(var(--color-primary),var(--color-tertiary))]"
   >
     <div class="hidden flex-grow flex-col items-center justify-center lg:flex">
       <AppLogo size="large"></AppLogo>
@@ -17,11 +17,11 @@
       <AppLogo size="large" class="mb-20 lg:hidden"></AppLogo>
 
       <div
-        class="w-80 rounded-md bg-white py-6 px-10 shadow 2xl:w-88 2xl:px-14"
+        class="2xl:w-88 w-80 rounded-md bg-white py-6 px-10 shadow 2xl:px-14"
       >
         <header>
           <h3
-            class="tracking-widiest text-center text-xl font-semibold text-primary"
+            class="tracking-widiest text-primary text-center text-xl font-semibold"
           >
             用户登录
           </h3>
@@ -147,10 +147,13 @@
 </template>
 
 <script lang="ts" setup>
-import { LoginInfo } from '@/typings';
+import type { RouteNamedMap } from 'vue-router/auto/routes';
+
 import { storeToRefs } from 'pinia';
 import { useForm } from 'vee-validate';
-import type { RouteNamedMap } from 'vue-router/auto/routes';
+
+import { LoginInfo } from '@/typings';
+import { getRouteOfMenuItem } from '@/utils/biz/menu';
 
 definePage({
   meta: {
@@ -253,8 +256,12 @@ const handleLoginSuccess = async () => {
   stopTransitionCounting();
 
   const { from, ...rest } = route.query;
+  const nextRoute = getRouteOfMenuItem(auth.firstPermittedMenu);
   await router.push({
-    name: from === '/sign-in' || !from ? '/' : (from as keyof RouteNamedMap),
+    name:
+      from === '/sign-in' || !from
+        ? nextRoute?.name || '/'
+        : (from as keyof RouteNamedMap),
     query: rest,
   });
 

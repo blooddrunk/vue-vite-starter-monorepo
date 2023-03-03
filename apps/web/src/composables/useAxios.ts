@@ -15,7 +15,7 @@ const isServerResponse = (r: any): r is ServerResponse => {
   return isPlainObject(r) && 'code' in r && 'message' in r;
 };
 
-const myAxios = createAxios({
+export const axios = createAxios({
   __validateResponse: (data) => {
     if (isServerResponse(data)) {
       const { code = 200, message = '未知错误', ...rest } = data;
@@ -41,8 +41,8 @@ export function useAxios<T = any, R = AxiosResponse<T>, D = any>(
   options?: UseAxiosOptions
 ) {
   if (config) {
-    return _useAxios<T, R, D>(initialData, config, myAxios, options);
+    return _useAxios<T, R, D>(initialData, config, axios, options);
   } else {
-    return _useAxios<T, R>(initialData, myAxios, options);
+    return _useAxios<T, R>(initialData, axios, options);
   }
 }
