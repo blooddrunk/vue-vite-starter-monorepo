@@ -17,7 +17,7 @@ const app = createApp(App);
 
 const installPlugins = async () => {
   const modules = import.meta.glob<{ install: UserPlugin }>(
-    ['./plugins/*/index.ts', './plugins/*.ts'],
+    ['./plugins/*/index.ts', './plugins/*.ts', '!./plugins/_*.ts'],
     {
       eager: true,
     }

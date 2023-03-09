@@ -45,7 +45,10 @@ declare module '@vue/runtime-core' {
     ElInput: typeof import('element-plus/es')['ElInput']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    ElTable: typeof import('element-plus/es')['ElTable']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
     GaugeChart: typeof import('./../components/modules/ECharts/GaugeChart.vue')['default']
@@ -64,6 +67,7 @@ declare module '@vue/runtime-core' {
     IconMdiKey: typeof import('~icons/mdi/key')['default']
     IconMdiLockOpen: typeof import('~icons/mdi/lock-open')['default']
     IconMdiLogout: typeof import('~icons/mdi/logout')['default']
+    IconMdiMagnify: typeof import('~icons/mdi/magnify')['default']
     IconMdiMenu: typeof import('~icons/mdi/menu')['default']
     IconMdiMenuOpen: typeof import('~icons/mdi/menu-open')['default']
     IconMdiPlay: typeof import('~icons/mdi/play')['default']
@@ -117,5 +121,8 @@ declare module '@vue/runtime-core' {
     VanSwipeItem: typeof import('vant/es')['SwipeItem']
     VanTabbar: typeof import('vant/es')['Tabbar']
     VanTabbarItem: typeof import('vant/es')['TabbarItem']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

@@ -1,4 +1,5 @@
 import type { UserPlugin } from '@/typings';
+
 import ElementPlus from 'element-plus';
 import zhCn from 'element-plus/es/locale/lang/zh-cn';
 

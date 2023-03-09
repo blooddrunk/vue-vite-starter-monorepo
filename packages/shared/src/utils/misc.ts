@@ -83,7 +83,7 @@ export const trimValues = (filter: Record<string, any>) =>
   });
 
 export const getFileNameOfResource = (path: string) => {
-  const matches = path.match(/([^\/]+)(?=\.\w+$)/);
+  const matches = path.match(/([^/]+)(?=\.\w+$)/);
   return matches ? matches[0] : '';
 };
 export const createNamedMapForGlobImport = <M>(modules: Record<string, M>) => {
@@ -91,10 +91,7 @@ export const createNamedMapForGlobImport = <M>(modules: Record<string, M>) => {
     getFileNameOfResource(key)
   );
 
-  return pickBy(
-    modulesWithFileNameAsKey,
-    (value, key) => !key.startsWith('__')
-  );
+  return pickBy(modulesWithFileNameAsKey, (value, key) => !key.startsWith('_'));
 };
 export const createNamedEntryForGlobImport = <M>(
   modules: Record<string, M>

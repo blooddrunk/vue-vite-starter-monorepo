@@ -50,7 +50,7 @@ const router = createRouter({
 });
 
 const middlewareModules = import.meta.glob<(router: RouterTyped) => void>(
-  './middleware/*.ts',
+  ['./middleware/*.ts', '!./middleware/_*.ts'],
   {
     import: 'default',
     eager: true,
