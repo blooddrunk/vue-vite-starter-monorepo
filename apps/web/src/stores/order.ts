@@ -44,5 +44,5 @@ export const useOrderStore = defineStore('order', () => {
 });
 
 if (import.meta.hot) {
-  import.meta.hot.accept(acceptHMRUpdate(useOrderStore, import.meta.hot));
+  import.meta.hot.accept(acceptHMRUpdate(useOrderStore, import.meta.hot)); 
 }
