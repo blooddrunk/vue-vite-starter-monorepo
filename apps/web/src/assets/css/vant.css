@@ -1,23 +1,27 @@
 @layer base {
-  :root {
-    --van-primary-color: var(--color-primary) !important;
-    --van-danger-color: theme('colors.red.500') !important;
-    --van-tabbar-item-active-color: var(--color-primary) !important;
-    --van-button-primary-background-color: var(--color-primary) !important;
-    --van-button-primary-border-color: var(--color-primary) !important;
-    --van-checkbox-checked-icon-color: var(--color-primary) !important;
-    --van-checkbox-label-color: var(--color-dark) !important;
-    --van-text-color: var(--color-dark) !important;
-    --van-text-color-2: var(--color-medium) !important;
-    --van-field-label-color: var(--color-dark) !important;
-    --van-field-error-message-color: theme('colors.red.500') !important;
+  :root:root {
+    --van-primary-color: var(--color-primary);
+    --van-danger-color: theme('colors.red.500');
+    --van-text-color: var(--color-dark);
+    --van-text-color-2: var(--color-medium);
+
+    --van-field-label-color: var(--color-dark);
+    --van-field-error-message-color: theme('colors.red.500');
+
+    --van-tabbar-item-active-color: var(--color-primary);
+
+    --van-button-primary-background-color: linear-gradient(
+      to bottom,
+      #31c19c,
+      #50e0b3
+    );
+    --van-button-primary-border-color: var(--color-primary);
+    --van-button-mini-height: theme('spacing.5');
+    --van-button-default-height: theme('spacing.10');
+    --van-button-normal-padding: 0 theme('spacing.5');
+    --van-button-small-padding: 0 theme('spacing.4');
+
+    --van-checkbox-checked-icon-color: var(--color-primary);
+    --van-checkbox-label-color: var(--color-dark);
   }
-}
-
-.van-address-edit__button {
-  @apply !bg-primary !border-primary;
-}
-
-.van-button--primary {
-  @apply !bg-primary;
 }

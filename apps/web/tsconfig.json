@@ -4,7 +4,6 @@
     "types": [
       "vue/macros-global",
       "vite/client",
-      "vite-plugin-pages/client",
       "vite-plugin-vue-layouts/client",
       "unplugin-icons/types/vue",
       "unplugin-vue-macros/macros-global",

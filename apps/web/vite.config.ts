@@ -41,7 +41,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       VueRouter({
         dts: './src/typings/typed-router.d.ts',
-        exclude: ['**/__*', '**/__*/**/*'],
+        exclude: ['**/_*', '**/_*/**/*'],
       }),
 
       VueMacros({
