@@ -1,5 +1,5 @@
 <template>
-  <BaseFormItem v-bind="$attrs">
+  <BaseFormItem v-bind="$attrs" :bind-blur-event="false">
     <template #default="slotProps">
       <el-checkbox-group v-bind="slotProps">
         <el-checkbox-button

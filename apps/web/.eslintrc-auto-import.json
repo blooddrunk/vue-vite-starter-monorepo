@@ -192,7 +192,6 @@
     "useFirstNavigableRoute": "readonly",
     "useFocus": "readonly",
     "useFocusWithin": "readonly",
-    "useFormField": "readonly",
     "useFps": "readonly",
     "useFullscreen": "readonly",
     "useGamepad": "readonly",

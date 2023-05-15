@@ -19,7 +19,7 @@ const props = withDefaults(
 const pageStyle = computed(() => ({
   paddingBottom:
     props.footer === true
-      ? 'calc(80px+1.5rem)'
+      ? '80px'
       : props.footer === false
       ? undefined
       : props.footer,

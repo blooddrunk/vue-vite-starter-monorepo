@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const config = require('./tailwind.config.cjs');
 
 const isDev = process.env.NODE_ENV === 'development';

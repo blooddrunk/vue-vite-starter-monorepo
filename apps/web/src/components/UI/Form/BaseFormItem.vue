@@ -17,7 +17,7 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import type { ValidationMode } from '@/composables/useFormField';
+import { useFormField, type ValidationMode } from '@jn/shared';
 
 type Props = {
   name?: string;
@@ -26,9 +26,10 @@ type Props = {
   labelWidth?: string;
   mode?: ValidationMode;
   validateOnMount?: boolean;
+  bindBlurEvent?: boolean;
   required?: boolean;
-  hasWrapper?: boolean;
   rules?: string;
+  validateStatus?: 'error' | 'validating' | 'success';
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -38,8 +39,10 @@ const props = withDefaults(defineProps<Props>(), {
   labelWidth: undefined,
   mode: 'aggressiveIfInvalid',
   validateOnMount: false,
+  bindBlurEvent: false,
   required: false,
-  hasWrapper: true,
+  rules: undefined,
+  validateStatus: undefined,
 });
 
 const label = props.showLabel ? props.label : undefined;

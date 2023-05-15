@@ -1,0 +1,20 @@
+@import 'element-plus/theme-chalk/index.css';
+@import 'element-plus/theme-chalk/dark/css-vars.css';
+
+@layer base {
+  :root:root {
+    --el-color-primary: var(--color-primary);
+    --el-color-primary-light-3: theme('colors.emerald.400');
+    --el-color-primary-light-5: theme('colors.emerald.300');
+    --el-color-primary-light-7: theme('colors.emerald.200');
+    --el-color-primary-light-8: theme('colors.emerald.100');
+    --el-color-primary-light-9: theme('colors.emerald.50');
+    --el-color-primary-dark-2: theme('colors.emerald.600');
+
+    --el-menu-item-height: var(--app-header-height);
+  }
+
+  .el-form--inline .el-form-item {
+    @apply !mr-4;
+  }
+}

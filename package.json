@@ -6,17 +6,17 @@
   "description": "",
   "scripts": {
     "web": "pnpm -F @app/web",
+    "web-nuxt": "pnpm -F @app/web-nuxt",
     "shared": "pnpm -F @jn/shared",
-    "eslint": "pnpm -F @jn/eslint-config",
-    "update": "pnpm update -ir"
+    "eslint": "pnpm -F @jn/eslint-config"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
     "@jn/eslint-config": "workspace:*",
-    "eslint": "^8.37.0",
-    "prettier": "^2.8.7",
-    "prettier-plugin-tailwindcss": "^0.2.6",
-    "typescript": "^5.0.3"
+    "eslint": "^8.40.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "typescript": "^5.0.4"
   },
   "pnpm": {
     "overrides": {

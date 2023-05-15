@@ -36,16 +36,16 @@
         @change="handleChange"
       />
 
-      <div v-if="$slots.append" class="ml-auto pl-1 flex-shrink-0">
+      <div v-if="$slots.append" class="ml-auto flex-shrink-0 pl-1">
         <slot name="append"></slot>
       </div>
     </div>
 
     <p
       v-if="showValidationError && errorMessage"
-      class="absolute top-full left-0"
+      class="absolute left-0 top-full"
     >
-      <span class="px-2 text-xs text-red-500 font-medium leading-none">
+      <span class="px-2 text-xs font-medium leading-none text-red-500">
         <slot name="error" :error="errorMessage">
           {{ errorMessage }}
         </slot>
@@ -61,6 +61,8 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
+import { useFormField } from '@jn/shared';
+
 type Props = {
   name: string;
   label?: string;
@@ -124,7 +126,7 @@ const isLabelActive = computed(
   @apply max-w-full pt-5;
 
   & .control {
-    @apply relative flex flex-grow items-center mb-1;
+    @apply relative mb-1 flex flex-grow items-center;
 
     &:hover {
       @apply border-primary;
@@ -143,21 +145,21 @@ const isLabelActive = computed(
 
     &::after {
       @apply border-b-2 border-inherit;
-      @apply transform scale-0;
+      @apply scale-0 transform;
     }
   }
 
   & .controlActive {
     &::after {
-      @apply transform scale-100;
+      @apply scale-100 transform;
     }
   }
 
   & label {
     @apply absolute left-0;
-    @apply h-6 ml-2;
-    @apply transition origin-top-left duration-500 ease-in-out;
-    @apply leading-6 text-primary;
+    @apply ml-2 h-6;
+    @apply origin-top-left transition duration-500 ease-in-out;
+    @apply text-primary leading-6;
   }
 
   & .labelActive {

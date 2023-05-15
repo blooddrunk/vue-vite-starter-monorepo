@@ -1,18 +1,11 @@
 import type { AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { UnwrapRef } from 'vue';
 
 import type { UseAxiosOptions } from './useAxios';
 import type { UsePaginationOptions } from './usePagination';
 
 import { cloneDeep, merge } from 'lodash-es';
-import {
-  computed,
-  readonly,
-  ref,
-  shallowRef,
-  unref,
-  UnwrapRef,
-  watch,
-} from 'vue';
+import { computed, readonly, ref, shallowRef, unref, watch } from 'vue';
 
 import { trimValues } from '../utils';
 import { useAxios } from './useAxios';
@@ -53,11 +46,13 @@ export const usePaginatedList = <
     filter = {} as TFilter,
     initialItems = [],
     transformPaginationToQuery = (pagination) => ({
-      page: pagination.currentPage.value,
+      currentPage: pagination.currentPage.value,
       pageSize: pagination.pageSize.value,
     }),
     infinite = false,
     axios,
+    onSuccess,
+    onError,
   } = options;
 
   const __filter = ref(filter);
@@ -93,6 +88,8 @@ export const usePaginatedList = <
         axios,
         {
           immediate: false,
+          onSuccess,
+          onError,
         }
       )
     : useAxios<ListResult<TValue>>(
@@ -103,6 +100,8 @@ export const usePaginatedList = <
         getRequestConfig(),
         {
           immediate: false,
+          onSuccess,
+          onError,
         }
       );
 

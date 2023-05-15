@@ -189,7 +189,6 @@ declare global {
   const useFirstNavigableRoute: typeof import('../composables/useFirstNavigableRoute')['useFirstNavigableRoute']
   const useFocus: typeof import('@vueuse/core')['useFocus']
   const useFocusWithin: typeof import('@vueuse/core')['useFocusWithin']
-  const useFormField: typeof import('../composables/useFormField')['useFormField']
   const useFps: typeof import('@vueuse/core')['useFps']
   const useFullscreen: typeof import('@vueuse/core')['useFullscreen']
   const useGamepad: typeof import('@vueuse/core')['useGamepad']
@@ -512,7 +511,6 @@ declare module 'vue' {
     readonly useFirstNavigableRoute: UnwrapRef<typeof import('../composables/useFirstNavigableRoute')['useFirstNavigableRoute']>
     readonly useFocus: UnwrapRef<typeof import('@vueuse/core')['useFocus']>
     readonly useFocusWithin: UnwrapRef<typeof import('@vueuse/core')['useFocusWithin']>
-    readonly useFormField: UnwrapRef<typeof import('../composables/useFormField')['useFormField']>
     readonly useFps: UnwrapRef<typeof import('@vueuse/core')['useFps']>
     readonly useFullscreen: UnwrapRef<typeof import('@vueuse/core')['useFullscreen']>
     readonly useGamepad: UnwrapRef<typeof import('@vueuse/core')['useGamepad']>
