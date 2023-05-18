@@ -2,7 +2,6 @@
   "extends": "@jn/tsconfig/base.json",
   "compilerOptions": {
     "types": [
-      "vue/macros-global",
       "vite/client",
       "vite-plugin-vue-layouts/client",
       "unplugin-icons/types/vue",
@@ -13,6 +12,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@/typings": ["src/utils/typings"],
+      "@/constants": ["src/utils/constants"],
       "@/modules/*": ["src/components/modules/*"],
       "@jn/shared/*": ["../../packages/shared/src/*"]
     }
@@ -20,7 +20,6 @@
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "vueCompilerOptions": {
     "plugins": [
-      "@vue-macros/volar/define-model",
       "@vue-macros/volar/define-props",
       "@vue-macros/volar/define-props-refs",
       "@vue-macros/volar/short-vmodel",

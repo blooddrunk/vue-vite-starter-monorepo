@@ -2,7 +2,7 @@
   <aside :class="$style.sidebar">
     <div class="border-b border-gray-100">
       <el-button
-        class="w-full !h-[var(--el-menu-item-height)]"
+        class="!h-[var(--el-menu-item-height)] w-full"
         link
         type="primary"
         @click="handleSidebarCollapse"
@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { MenuItem } from '@/stores/menu';
+import type { MenuItem } from '@/typings';
 
 const uiStore = useUIStore();
 const menuStore = useMenuStore();
@@ -53,7 +53,7 @@ const filterPermittedMenu = (items?: MenuItem[]) =>
 
 <style lang="postcss" module>
 .sidebar {
-  @apply flex-shrink-0 h-[var(--app-content-height)];
+  @apply h-[var(--app-content-height)] flex-shrink-0;
   @apply overflow-y-auto border-r border-gray-200;
 
   :global {

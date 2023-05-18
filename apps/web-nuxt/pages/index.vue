@@ -12,20 +12,11 @@
 </template>
 
 <script setup lang="ts">
-import type { RouteNamedMap } from 'vue-router/auto/routes';
-
-definePage({
-  meta: {
-    requiresAuth: false,
-  },
+definePageMeta({
+  requiresAuth: false,
 });
 
-const menuList = ref<
-  {
-    text: string;
-    to: keyof RouteNamedMap;
-  }[]
->([
+const menuList = ref([
   {
     text: 'Simple list',
     to: '/simple-list',
@@ -48,7 +39,7 @@ const menuList = ref<
 
   {
     text: 'Biz Admin',
-    to: '/main/admin.role',
+    to: '/main/admin',
   },
 
   {

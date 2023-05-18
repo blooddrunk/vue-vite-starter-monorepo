@@ -9,7 +9,7 @@
     </van-nav-bar>
 
     <div class="h-full overflow-y-auto">
-      <router-view></router-view>
+      <slot></slot>
     </div>
 
     <TheTabbar v-if="hasTabbar"></TheTabbar>

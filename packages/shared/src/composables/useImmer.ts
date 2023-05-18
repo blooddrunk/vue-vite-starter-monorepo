@@ -1,4 +1,4 @@
-import produce from 'immer';
+import { produce } from 'immer';
 import { shallowRef } from 'vue';
 
 export const useImmer = <S>(baseState: S) => {

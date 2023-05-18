@@ -1,4 +1,4 @@
-import type { MenuItem } from '@/stores/menu';
+import type { MenuItem } from '@/typings';
 
 import { getFirstNavigableMenu, getRouteOfMenuItem } from '@/utils/menu';
 

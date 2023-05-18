@@ -31,6 +31,7 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@/typings': path.resolve(__dirname, 'src/utils/typings'),
+        '@/constants': path.resolve(__dirname, 'src/utils/constants'),
         '@/modules/': `${path.resolve(__dirname, 'src/components/modules')}/`,
         '@/': `${path.resolve(__dirname, 'src')}/`,
       },
@@ -45,13 +46,15 @@ export default defineConfig(({ mode }) => {
       VueMacros({
         plugins: {
           vue: Vue({
-            reactivityTransform: true,
+            script: {
+              defineModel: true,
+            },
           }),
           vueJsx: VueJsx(),
         },
 
-        // ! this won't always work, use vite-plugin-vue-type-imports temporarily
-        betterDefine: true,
+        // ? This should be addressed in vue@3
+        // betterDefine: true,
       }),
 
       Layouts(),

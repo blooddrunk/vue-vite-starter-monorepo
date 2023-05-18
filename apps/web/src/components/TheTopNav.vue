@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { SystemValue } from '@/stores/menu';
+import type { SystemValue } from '@/typings';
 
 import { promiseTimeout } from '@jn/shared';
 import { storeToRefs } from 'pinia';
