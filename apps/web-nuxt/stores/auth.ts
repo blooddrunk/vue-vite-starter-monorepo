@@ -1,5 +1,6 @@
 import type { AuthInfo, LoginInfo, MenuItem, UserInfo } from '@/typings';
 
+import { useStorage } from '@vueuse/core';
 import { keyBy, pick } from 'lodash-es';
 import { acceptHMRUpdate, defineStore } from 'pinia';
 

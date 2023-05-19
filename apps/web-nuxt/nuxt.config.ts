@@ -20,6 +20,10 @@ export default defineNuxtConfig({
     typedPages: true,
   },
 
+  imports: {
+    dirs: ['stores', 'services'],
+  },
+
   modules: ['@vueuse/nuxt', '@pinia/nuxt', '@nuxtjs/tailwindcss'],
 
   runtimeConfig: {
