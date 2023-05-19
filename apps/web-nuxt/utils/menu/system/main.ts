@@ -14,14 +14,14 @@ export default [
     icon: 'cogs',
     children: [
       {
-        id: '/main/admin.account',
+        id: '/main/admin/account',
         title: '账号管理',
-        route: '/main/admin.account',
+        route: '/main/admin/account',
       },
       {
-        id: '/main/admin.role',
+        id: '/main/admin/role',
         title: '角色管理',
-        route: '/main/admin.role',
+        route: '/main/admin/role',
       },
     ],
   },

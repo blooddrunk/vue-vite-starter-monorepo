@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const config = require('./tailwind.config.cjs');
-
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
@@ -8,7 +5,7 @@ module.exports = {
     'tailwindcss/nesting': {},
 
     // https://github.com/tailwindcss/tailwindcss
-    tailwindcss: { config },
+    tailwindcss: {},
 
     // https://github.com/csstools/postcss-preset-env
     // defaults to stage 2

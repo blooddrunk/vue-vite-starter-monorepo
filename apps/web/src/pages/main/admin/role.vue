@@ -9,7 +9,7 @@ definePage({
     breadcrumb: [
       {
         title: '系统管理',
-        route: '/main/admin.account',
+        route: '/main/admin/account',
       },
       {
         title: 'Breadcrumb',

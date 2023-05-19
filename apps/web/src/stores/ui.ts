@@ -5,6 +5,7 @@ import { acceptHMRUpdate, defineStore } from 'pinia';
 export type BreadcrumbItem = {
   title: string;
   route?: keyof RouteNamedMap;
+  icon?: string;
   isVisible?: boolean;
 };
 

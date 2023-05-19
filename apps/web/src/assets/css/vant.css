@@ -10,11 +10,11 @@
 
     --van-tabbar-item-active-color: var(--color-primary);
 
-    --van-button-primary-background-color: linear-gradient(
+    --van-button-primary-background: linear-gradient(
       to bottom,
       #31c19c,
       #50e0b3
-    );
+    ) !important;
     --van-button-primary-border-color: var(--color-primary);
     --van-button-mini-height: theme('spacing.5');
     --van-button-default-height: theme('spacing.10');
@@ -24,4 +24,8 @@
     --van-checkbox-checked-icon-color: var(--color-primary);
     --van-checkbox-label-color: var(--color-dark);
   }
+}
+
+.van-button--primary {
+  @apply bg-[image:--van-button-primary-background];
 }

@@ -56,5 +56,5 @@ const handleItemClick = (item: MenuItem) => {
 };
 
 const getIcon = (shortname: string) =>
-  getIconData(icons as IconifyJSON, shortname);
+  getIconData(icons as IconifyJSON, shortname) || '';
 </script>

@@ -48,7 +48,7 @@ const menuList = ref<
 
   {
     text: 'Biz Admin',
-    to: '/main/admin.role',
+    to: '/main/admin',
   },
 
   {
