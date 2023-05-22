@@ -1,13 +1,6 @@
-import type { RouteNamedMap } from 'vue-router/auto/routes';
+import type { BreadcrumbItem } from '@/typings';
 
 import { acceptHMRUpdate, defineStore } from 'pinia';
-
-export type BreadcrumbItem = {
-  title: string;
-  route?: keyof RouteNamedMap;
-  icon?: string;
-  isVisible?: boolean;
-};
 
 export const useUIStore = defineStore('ui', () => {
   const breadcrumbList = ref<BreadcrumbItem[]>([]);

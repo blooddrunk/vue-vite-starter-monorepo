@@ -3,12 +3,10 @@
 </template>
 
 <script setup lang="ts">
-definePage({
-  meta: {
-    layout: 'sidebar',
-    breadcrumb: {
-      title: 'Acknowledgements',
-    },
+definePageMeta({
+  layout: 'sidebar',
+  breadcrumb: {
+    title: 'Acknowledgements',
   },
 });
 </script>

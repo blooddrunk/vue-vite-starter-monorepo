@@ -39,11 +39,9 @@
 import { storeToRefs } from 'pinia';
 import { computed, ref, watch } from 'vue';
 
-definePage({
-  meta: {
-    layout: 'tabbar-navbar',
-    title: '购物车',
-  },
+definePageMeta({
+  layout: 'tabbar-navbar',
+  title: '购物车',
 });
 
 const cart = useCartStore();

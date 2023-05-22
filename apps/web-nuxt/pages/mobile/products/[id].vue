@@ -6,13 +6,13 @@
       <van-skeleton title avatar :row="3" :loading="isLoading">
         <div class="space-y-3">
           <p>
-            <span class="font-bold text-primary text-lg">
+            <span class="text-primary text-lg font-bold">
               {{ data.price }}
             </span>
-            <span class="ml-1 text-xs text-primary">元/月</span>
+            <span class="text-primary ml-1 text-xs">元/月</span>
           </p>
           <p class="font-bold">{{ data.title }}</p>
-          <p class="text-sm text-medium">{{ data.body }}</p>
+          <p class="text-medium text-sm">{{ data.body }}</p>
         </div>
       </van-skeleton>
     </div>
@@ -58,12 +58,10 @@ import type { RouteLocationRaw } from 'vue-router/auto';
 
 import { showFailToast } from 'vant';
 
-definePage({
-  meta: {
-    layout: 'navbar',
-    title: '商品详情',
-    canNavBack: true,
-  },
+definePageMeta({
+  layout: 'navbar',
+  title: '商品详情',
+  canNavBack: true,
 });
 
 const props = defineProps<{

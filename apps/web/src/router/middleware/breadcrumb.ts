@@ -1,6 +1,5 @@
+import type { BreadcrumbItem } from '@/typings';
 import type { RouterTyped } from 'vue-router/auto';
-
-import { BreadcrumbItem } from '@/stores/ui';
 
 export default (router: RouterTyped) => {
   router.beforeEach((to) => {

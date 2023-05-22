@@ -93,8 +93,7 @@ export default defineConfig(({ mode }) => {
           'vue/macros',
           VueRouterAutoImports,
           {
-            '@jn/shared': ['usePagination', 'useArrayPagination'],
-            '@jn/shared/echarts': ['useEcharts'],
+            '@jn/shared': ['usePagination', 'useArrayPagination', 'useEcharts'],
           },
         ],
         dirs: ['./src/composables/**', './src/stores/**', './src/services/**'],

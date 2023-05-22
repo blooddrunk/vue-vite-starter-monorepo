@@ -40,10 +40,8 @@
 import { format, parseISO } from 'date-fns';
 import { useForm } from 'vee-validate';
 
-definePage({
-  meta: {
-    requiresAuth: false,
-  },
+definePageMeta({
+  requiresAuth: false,
 });
 
 type ListItem = {

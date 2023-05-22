@@ -5,9 +5,25 @@ export default defineNuxtConfig({
   alias: {
     '@/typings': path.resolve(__dirname, 'utils/typings'),
     '@/modules/': `${path.resolve(__dirname, 'components/modules')}/`,
+    '@/constants': path.resolve(__dirname, 'src/utils/constants'),
   },
 
   ssr: false,
+
+  components: [
+    { path: '~/components', extensions: ['vue'] },
+    {
+      path: '@/components/ui',
+      pathPrefix: false,
+      prefix: 'base',
+      extensions: ['vue'],
+    },
+    {
+      path: '@/components/modules',
+      pathPrefix: false,
+      extensions: ['vue'],
+    },
+  ],
 
   css: ['@/assets/css/main.css'],
 
@@ -24,7 +40,13 @@ export default defineNuxtConfig({
     dirs: ['stores', 'services'],
   },
 
-  modules: ['@vueuse/nuxt', '@pinia/nuxt', '@nuxtjs/tailwindcss'],
+  modules: [
+    '@nuxt/devtools',
+    '@vueuse/nuxt',
+    '@pinia/nuxt',
+    '@nuxtjs/tailwindcss',
+    'nuxt-icon',
+  ],
 
   runtimeConfig: {
     public: {

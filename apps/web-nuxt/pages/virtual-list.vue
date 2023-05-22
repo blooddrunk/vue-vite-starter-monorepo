@@ -33,10 +33,8 @@ import { format, parseISO } from 'date-fns';
 import { TableV2FixedDir } from 'element-plus';
 import { useForm } from 'vee-validate';
 
-definePage({
-  meta: {
-    requiresAuth: false,
-  },
+definePageMeta({
+  requiresAuth: false,
 });
 
 const { values: filter, handleSubmit } = useForm({

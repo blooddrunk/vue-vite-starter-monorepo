@@ -3,12 +3,10 @@
 </template>
 
 <script lang="ts" setup>
-definePage({
+definePageMeta({
   redirect: {
     name: '/mobile/category',
   },
-  meta: {
-    layout: 'tabbar',
-  },
+  layout: 'tabbar',
 });
 </script>

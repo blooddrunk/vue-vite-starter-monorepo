@@ -15,7 +15,9 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import type { CommonChartProps } from '@jn/shared/echarts';
+import type { CommonChartProps } from '@jn/shared';
+
+import { useEcharts } from '@jn/shared';
 
 const props = withDefaults(defineProps<CommonChartProps>(), {
   autoResize: true,

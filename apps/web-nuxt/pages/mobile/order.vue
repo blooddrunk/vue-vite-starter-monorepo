@@ -71,17 +71,16 @@
 </template>
 
 <script lang="ts" setup>
-import { CartItem } from '@/typings';
 import { useRouteQuery } from '@vueuse/router';
 import { computed, ref } from 'vue';
 import { onBeforeRouteLeave } from 'vue-router';
 
-definePage({
-  meta: {
-    layout: 'navbar',
-    title: '订单提交',
-    canNavBack: true,
-  },
+import { CartItem } from '@/typings';
+
+definePageMeta({
+  layout: 'navbar',
+  title: '订单提交',
+  canNavBack: true,
 });
 
 const directOrderId = useRouteQuery('productId');

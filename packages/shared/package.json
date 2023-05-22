@@ -4,8 +4,7 @@
   "description": "",
   "main": "./src/index.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./echarts": "./src/echarts.ts"
+    ".": "./src/index.ts"
   },
   "sideEffects": false,
   "dependencies": {

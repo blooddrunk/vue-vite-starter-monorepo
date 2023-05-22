@@ -3,10 +3,8 @@
 </template>
 
 <script lang="ts" setup>
-definePage({
-  meta: {
-    breadcrumb: true,
-  },
+definePageMeta({
+  breadcrumb: true,
 });
 
 useFirstNavigableRoute('/main/admin');

@@ -16,6 +16,13 @@ export type MenuItem = {
   isVisible?: boolean;
 };
 
+export type BreadcrumbItem = {
+  title: string;
+  route?: keyof RouteNamedMap;
+  icon?: string;
+  isVisible?: boolean;
+};
+
 export type CommonSelectOption = {
   label: string;
   value: string | number;

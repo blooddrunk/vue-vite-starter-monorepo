@@ -44,10 +44,8 @@ import { ElMessage } from 'element-plus';
 
 import { Product } from '@/typings';
 
-definePage({
-  meta: {
-    requiresAuth: false,
-  },
+definePageMeta({
+  requiresAuth: false,
 });
 
 const simpleFormStore = useSimpleFormStore();

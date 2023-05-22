@@ -36,19 +36,19 @@
 </template>
 
 <script lang="ts" setup>
-import { CustomizationRequest } from '@/typings';
+import type { AddressEditInfo } from 'vant';
+
 import { areaList } from '@vant/area-data';
 import { format } from 'date-fns';
 import { showFailToast, showSuccessToast } from 'vant';
-import type { AddressEditInfo } from 'vant';
 import { useRouter } from 'vue-router';
 
-definePage({
-  meta: {
-    layout: 'navbar',
-    title: '全屋智能定制',
-    canNavBack: true,
-  },
+import { CustomizationRequest } from '@/typings';
+
+definePageMeta({
+  layout: 'navbar',
+  title: '全屋智能定制',
+  canNavBack: true,
 });
 
 const router = useRouter();

@@ -9,6 +9,8 @@ declare namespace NodeJS {
 }
 
 declare module '#app' {
+  import type { BreadcrumbItem } from '@/typings';
+
   interface PageMeta {
     layout?:
       | 'default'
@@ -23,5 +25,6 @@ declare module '#app' {
     canNavBack?: boolean;
     keepAlive?: boolean;
     openInTab?: boolean;
+    breadcrumb?: BreadcrumbItem | BreadcrumbItem[] | true;
   }
 }

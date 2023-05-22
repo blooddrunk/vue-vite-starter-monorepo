@@ -1,4 +1,4 @@
-import type { BreadcrumbItem } from '@/stores/ui';
+import type { BreadcrumbItem } from '@/typings';
 import type { RouteRecordRaw, RouterTyped } from 'vue-router/auto';
 
 import { createNamedEntryForGlobImport } from '@jn/shared';

@@ -14,11 +14,9 @@
 import { storeToRefs } from 'pinia';
 import { computed } from 'vue';
 
-definePage({
-  meta: {
-    layout: 'tabbar-navbar',
-    title: '我的订单',
-  },
+definePageMeta({
+  layout: 'tabbar-navbar',
+  title: '我的订单',
 });
 
 const order = useOrderStore();

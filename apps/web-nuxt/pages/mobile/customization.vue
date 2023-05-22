@@ -21,11 +21,9 @@
 </template>
 
 <script lang="ts" setup>
-definePage({
-  meta: {
-    layout: 'tabbar-navbar',
-    title: '全屋智能',
-  },
+definePageMeta({
+  layout: 'tabbar-navbar',
+  title: '全屋智能',
 });
 
 const { data, execute } = useCustomizationDetail();

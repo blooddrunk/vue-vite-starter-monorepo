@@ -1,8 +1,8 @@
 <template>
-  <article class="flex h-screen flex-col px-8 pt-[15vh] pb-8">
+  <article class="flex h-screen flex-col px-8 pb-8 pt-[15vh]">
     <header>
       <h3 class="py-3 text-2xl font-bold">手机快捷登录</h3>
-      <p class="text-sm text-medium">未注册过的手机号将自动创建账号</p>
+      <p class="text-medium text-sm">未注册过的手机号将自动创建账号</p>
     </header>
 
     <form class="mt-12" @submit.prevent>
@@ -80,16 +80,16 @@
 </template>
 
 <script lang="ts" setup>
-import { MobileLoginInfo } from '@/typings';
-import { showFailToast, showToast } from 'vant';
-import { useForm } from 'vee-validate';
 import type { RouteLocationResolved } from 'vue-router/auto';
 
-definePage({
-  meta: {
-    layout: 'empty',
-    requiresAuth: false,
-  },
+import { showFailToast, showToast } from 'vant';
+import { useForm } from 'vee-validate';
+
+import { MobileLoginInfo } from '@/typings';
+
+definePageMeta({
+  layout: 'empty',
+  requiresAuth: false,
 });
 
 const authStore = useMobileAuthStore();

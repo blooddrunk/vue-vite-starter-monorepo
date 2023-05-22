@@ -17,7 +17,7 @@
       <AppLogo size="large" class="mb-20 lg:hidden"></AppLogo>
 
       <div
-        class="2xl:w-88 w-80 rounded-md bg-white py-6 px-10 shadow 2xl:px-14"
+        class="2xl:w-88 w-80 rounded-md bg-white px-10 py-6 shadow 2xl:px-14"
       >
         <header>
           <h3
@@ -155,11 +155,9 @@ import { useForm } from 'vee-validate';
 import { LoginInfo } from '@/typings';
 import { getRouteOfMenuItem } from '@/utils/menu';
 
-definePage({
-  meta: {
-    layout: 'empty',
-    requiresAuth: false,
-  },
+definePageMeta({
+  layout: 'empty',
+  requiresAuth: false,
 });
 
 const auth = useAuthStore();

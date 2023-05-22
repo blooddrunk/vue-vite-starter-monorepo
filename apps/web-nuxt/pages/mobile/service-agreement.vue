@@ -78,13 +78,11 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
 
-definePage({
-  meta: {
-    layout: 'navbar',
-    title: '服务协议',
-    requiresAuth: false,
-    canNavBack: true,
-  },
+definePageMeta({
+  layout: 'navbar',
+  title: '服务协议',
+  requiresAuth: false,
+  canNavBack: true,
 });
 
 const router = useRouter();

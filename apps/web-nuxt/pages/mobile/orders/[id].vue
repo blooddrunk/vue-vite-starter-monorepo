@@ -105,12 +105,11 @@ import type { ActionSheetAction } from 'vant';
 import { getPlaceholderForNonValue } from '@jn/shared';
 import { showConfirmDialog, showFailToast, showToast } from 'vant';
 
-definePage({
-  meta: {
-    layout: 'navbar',
-    title: '订单详情',
-    canNavBack: true,
-  },
+definePageMeta({
+  layout: 'navbar',
+  title: '订单详情',
+  canNavBack: true,
+
   props: true,
 });
 

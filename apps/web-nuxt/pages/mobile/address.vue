@@ -15,19 +15,17 @@
 </template>
 
 <script lang="ts" setup>
+import type { AddressEditInfo } from 'vant';
+
 import { areaList } from '@vant/area-data';
 import { showFailToast, showSuccessToast } from 'vant';
 
-import type { AddressEditInfo } from 'vant';
-
-definePage({
-  meta: {
-    layout: 'navbar',
-    breadcrumb: {
-      title: '服务地址填写',
-    },
-    canNavBack: true,
+definePageMeta({
+  layout: 'navbar',
+  breadcrumb: {
+    title: '服务地址填写',
   },
+  canNavBack: true,
 });
 
 const router = useRouter();
