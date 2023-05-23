@@ -82,8 +82,8 @@ const addToCart = async () => {
   }
 };
 
-const checkoutRoute = computed<RouteLocationRaw<'/mobile/order'>>(() => ({
-  name: '/mobile/order',
+const checkoutRoute = computed<RouteLocationRaw<'mobile-order'>>(() => ({
+  name: 'mobile-order',
   query: {
     productId: props.id,
   },

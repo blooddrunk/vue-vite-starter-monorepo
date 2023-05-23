@@ -4,8 +4,8 @@ import path from 'path';
 export default defineNuxtConfig({
   alias: {
     '@/typings': path.resolve(__dirname, 'utils/typings'),
-    '@/modules/': `${path.resolve(__dirname, 'components/modules')}/`,
-    '@/constants': path.resolve(__dirname, 'src/utils/constants'),
+    '@/constants': path.resolve(__dirname, 'utils/constants'),
+    '@/modules': path.resolve(__dirname, 'components/modules'),
   },
 
   ssr: false,
@@ -46,6 +46,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
+    '@vant/nuxt',
+    '@element-plus/nuxt',
   ],
 
   runtimeConfig: {

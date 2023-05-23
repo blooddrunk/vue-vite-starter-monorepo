@@ -328,6 +328,7 @@
     "watchThrottled": "readonly",
     "watchTriggerable": "readonly",
     "watchWithFilter": "readonly",
-    "whenever": "readonly"
+    "whenever": "readonly",
+    "toValue": "readonly"
   }
 }

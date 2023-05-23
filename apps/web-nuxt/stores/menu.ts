@@ -1,4 +1,4 @@
-import type { SystemList, SystemValue } from '@/typings';
+import type { MenuItem, SystemList, SystemValue } from '@/typings';
 
 import { flattenTree } from '@jn/shared';
 import { acceptHMRUpdate, defineStore } from 'pinia';

@@ -246,7 +246,7 @@ const isLoginTransitionFinished = ref(false);
 const handleLoginSuccess = async () => {
   // in case page has already been redirected
   // should not happen
-  if (route.name !== '/sign-in' || isLoginTransitionFinished.value) {
+  if (route.name !== 'sign-in' || isLoginTransitionFinished.value) {
     return;
   }
 
@@ -257,8 +257,8 @@ const handleLoginSuccess = async () => {
   const nextRoute = getRouteOfMenuItem(auth.firstPermittedMenu);
   await router.push({
     name:
-      from === '/sign-in' || !from
-        ? nextRoute?.name || '/'
+      from === 'sign-in' || !from
+        ? nextRoute?.name || 'index'
         : (from as keyof RouteNamedMap),
     query: rest,
   });

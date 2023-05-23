@@ -103,6 +103,14 @@ export default defineConfig(({ mode }) => {
           filepath: './.eslintrc-auto-import.json',
           globalsPropValue: 'readonly',
         },
+
+        resolvers: [
+          ElementPlusResolver({
+            importStyle: false,
+          }),
+
+          VantResolver(),
+        ],
       }),
     ],
 

@@ -1,6 +1,6 @@
-import { defineStore, acceptHMRUpdate } from 'pinia';
+import type { MenuItem } from '@/typings';
 
-import type { MenuItem } from './menu';
+import { acceptHMRUpdate, defineStore } from 'pinia';
 
 export const useNavTabStore = defineStore('navTab', () => {
   const maxNavTabCount = ref(10);
