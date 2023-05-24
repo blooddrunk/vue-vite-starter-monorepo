@@ -2,25 +2,25 @@
   <div class="relative text-white" :class="wrapperClass" @click="togglePlay">
     <video
       ref="video"
-      class="w-full h-full object-contain object-center bg-zinc-200"
+      class="h-full w-full bg-zinc-200 object-contain object-center"
       object-fit="cover"
       v-bind="$attrs"
     ></video>
 
     <a
       v-if="playing"
-      class="absolute right-2 bottom-2"
+      class="absolute bottom-2 right-2"
       @click.prevent.stop="toggleMuted"
     >
-      <IconMdiVolumeOff v-if="muted"></IconMdiVolumeOff>
-      <IconMdiVolumeSource v-else></IconMdiVolumeSource>
+      <Icon v-if="muted" name="mdi:volume-off"></Icon>
+      <Icon v-else name="mdi:volume-source"></Icon>
     </a>
     <div
       v-else
-      class="absolute inset-0 bg-zinc-200/75 flex items-center justify-center"
+      class="absolute inset-0 flex items-center justify-center bg-zinc-200/75"
     >
-      <IconMdiAlert v-if="hasError" class="text-[1.4em]"></IconMdiAlert>
-      <IconMdiPlay v-else class="text-[1.4em]"></IconMdiPlay>
+      <Icon v-if="hasError" name="mdi:alert" class="text-[1.4em]"></Icon>
+      <Icon v-else name="mdi:play" class="text-[1.4em]"></Icon>
     </div>
   </div>
 </template>

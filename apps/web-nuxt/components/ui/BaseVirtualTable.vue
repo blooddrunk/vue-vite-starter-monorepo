@@ -6,9 +6,9 @@
 
     <template v-if="loading" #overlay>
       <div
-        class="absolute inset-0 grid place-content-center z-50 transition bg-white/80 dark:bg-slate-800/95"
+        class="absolute inset-0 z-50 grid place-content-center bg-white/80 transition dark:bg-slate-800/95"
       >
-        <IconMdiLoading class="animate-spin"></IconMdiLoading>
+        <Icon class="animate-spin" name="mdi:loading"></Icon>
       </div>
     </template>
   </el-table-v2>

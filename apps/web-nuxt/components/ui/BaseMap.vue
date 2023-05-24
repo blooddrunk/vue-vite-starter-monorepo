@@ -8,14 +8,14 @@
   ></ECharts>
 </template>
 
-<script lang="ts">
-export default defineComponent({
-  inheritAttrs: false,
-});
-</script>
-
 <script lang="ts" setup>
 import type { MapChartProps } from '@jn/shared';
+
+import { useEcharts } from '@jn/shared';
+
+defineOptions({
+  inheritAttrs: false,
+});
 
 const props = withDefaults(defineProps<MapChartProps>(), {
   autoResize: true,

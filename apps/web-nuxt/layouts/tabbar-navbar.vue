@@ -1,5 +1,7 @@
 <template>
-  <LayoutNavbar has-tabbar></LayoutNavbar>
+  <LayoutNavbar has-tabbar>
+    <slot></slot>
+  </LayoutNavbar>
 </template>
 
 <script lang="ts" setup>

@@ -1,5 +1,3 @@
-declare const __DEV__: boolean;
-
 declare namespace NodeJS {
   export interface ProcessEnv {
     NUXT_PUBLIC_PATH: string;
@@ -28,3 +26,24 @@ declare module '#app' {
     breadcrumb?: BreadcrumbItem | BreadcrumbItem[] | true;
   }
 }
+
+declare module '#vue-router' {
+  interface RouteMeta {
+    layout?:
+      | 'default'
+      | 'error'
+      | 'empty'
+      | 'sidebar'
+      | 'navbar'
+      | 'tabbar'
+      | 'tabbar-navbar';
+    requiresAuth?: boolean;
+    title?: string;
+    canNavBack?: boolean;
+    keepAlive?: boolean;
+    openInTab?: boolean;
+    breadcrumb?: BreadcrumbItem | BreadcrumbItem[] | true;
+  }
+}
+
+export {};

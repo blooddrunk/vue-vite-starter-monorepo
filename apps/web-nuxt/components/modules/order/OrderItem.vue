@@ -45,8 +45,8 @@
 </template>
 
 <script lang="ts" setup>
+import type { RouteLocationRaw } from '#vue-router';
 import type { OrderItem } from '@/typings';
-import type { RouteLocationRaw } from 'vue-router/auto';
 
 import { format } from 'date-fns';
 
@@ -67,7 +67,7 @@ const statusClass = computed(
 );
 
 const routeLocation: RouteLocationRaw = {
-  name: '/mobile/orders/[id]',
+  name: 'mobile-orders-id',
   params: {
     id: props.item.orderNumber,
   },

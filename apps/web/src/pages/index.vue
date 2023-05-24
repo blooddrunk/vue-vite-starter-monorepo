@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import type { RouteNamedMap } from 'vue-router/auto/routes';
+import type { RouteLocationRaw } from 'vue-router/auto';
 
 definePage({
   meta: {
@@ -23,7 +23,7 @@ definePage({
 const menuList = ref<
   {
     text: string;
-    to: keyof RouteNamedMap;
+    to: RouteLocationRaw;
   }[]
 >([
   {

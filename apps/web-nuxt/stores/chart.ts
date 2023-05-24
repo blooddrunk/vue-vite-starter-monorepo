@@ -1,3 +1,4 @@
+import { useStorage } from '@vueuse/core';
 import { acceptHMRUpdate, defineStore } from 'pinia';
 
 import { StoreKeys } from '@/services/chart';

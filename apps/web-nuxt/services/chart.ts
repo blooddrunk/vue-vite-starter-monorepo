@@ -84,8 +84,9 @@ export type Store = Partial<{
 }>;
 
 export const useDataByCity = () => {
+  const runtimeConfig = useRuntimeConfig();
   return useAxios<Store>({} as Store, {
-    url: `${import.meta.env.VITE_PUBLIC_PATH}datastore.json?_t=${Date.now()}`,
+    url: `${runtimeConfig.public.publicPath}datastore.json?_t=${Date.now()}`,
     __transformData: false,
   });
 };

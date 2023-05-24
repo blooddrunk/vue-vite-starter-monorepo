@@ -2,11 +2,11 @@
   <div>
     <a
       :class="buttonClass"
-      class="max-w-40 inline-flex items-center px-3 py-1.5 shadow shadow-primary rounded bg-white"
+      class="max-w-40 shadow-primary inline-flex items-center rounded bg-white px-3 py-1.5 shadow"
       @click.prevent="togglePickerVisible()"
     >
       <span class="truncate">{{ displayValue }}</span>
-      <IconMdiChevronRight class="ml-2"></IconMdiChevronRight>
+      <Icon name="mdi:chevron-right" class="ml-2"></Icon>
     </a>
 
     <van-popup
@@ -28,10 +28,10 @@
 </template>
 
 <script lang="ts" setup>
-import { last } from 'lodash-es';
+import type { AreaInstance, PickerOption } from 'vant';
 
 import { areaList } from '@vant/area-data';
-import type { AreaInstance, PickerOption } from 'vant';
+import { last } from 'lodash-es';
 
 type Props = {
   modelValue?: string;

@@ -7,8 +7,8 @@
         type="primary"
         @click="handleSidebarCollapse"
       >
-        <IconMdiMenu v-if="uiStore.isSidebarCollapsed"></IconMdiMenu>
-        <IconMdiMenuOpen v-else></IconMdiMenuOpen>
+        <Icon v-if="uiStore.isSidebarCollapsed" name="mdi:menu"></Icon>
+        <Icon v-else name="mdi:menu-open"></Icon>
       </el-button>
     </div>
 

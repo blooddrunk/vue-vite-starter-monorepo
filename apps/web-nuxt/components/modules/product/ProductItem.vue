@@ -1,6 +1,6 @@
 <template>
   <router-link :to="routeLocation">
-    <figure class="mt-3 rounded-md bg-white p-2 shadow shadow-light">
+    <figure class="shadow-light mt-3 rounded-md bg-white p-2 shadow">
       <van-image
         class="h-32 w-full"
         :src="item.thumbnail"
@@ -8,17 +8,17 @@
         round
         radius="8px"
       ></van-image>
-      <div class="break-all text-medium line-clamp-3">
-        <figcaption class="inline text-dark">
+      <div class="text-medium line-clamp-3 break-all">
+        <figcaption class="text-dark inline">
           {{ item.title }}
         </figcaption>
-        <span class="ml-2 text-xs text-light">
+        <span class="text-light ml-2 text-xs">
           {{ item.body }}
         </span>
       </div>
       <div class="flex items-center py-1">
-        <span class="font-bold text-primary">{{ item.price }}</span>
-        <span class="ml-1 text-xs text-primary">元/月</span>
+        <span class="text-primary font-bold">{{ item.price }}</span>
+        <span class="text-primary ml-1 text-xs">元/月</span>
 
         <span class="ml-auto">
           <van-button
@@ -28,7 +28,7 @@
             :disabled="cart.isItemAdding"
             @click.prevent.stop="addToCart"
           >
-            <IconMdiCartPlus></IconMdiCartPlus>
+            <Icon name="mdi:cart-plus"></Icon>
           </van-button>
         </span>
       </div>
@@ -37,10 +37,10 @@
 </template>
 
 <script lang="ts" setup>
-import { showFailToast } from 'vant';
-import type { RouteLocationRaw } from 'vue-router/auto';
-
+import type { RouteLocationRaw } from '#vue-router';
 import type { ProductItem } from '@/typings';
+
+import { showFailToast } from 'vant';
 
 type Props = {
   item: ProductItem;
@@ -60,8 +60,8 @@ const addToCart = async () => {
   }
 };
 
-const routeLocation: RouteLocationRaw<'/mobile/products/[id]'> = {
-  name: '/mobile/products/[id]',
+const routeLocation: RouteLocationRaw<'mobile-products-id'> = {
+  name: 'mobile-products-id',
   params: {
     id: props.item.id,
   },

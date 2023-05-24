@@ -54,7 +54,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { RouteLocationRaw } from 'vue-router/auto';
+import type { RouteLocationRaw } from '#vue-router';
 
 import { showFailToast } from 'vant';
 

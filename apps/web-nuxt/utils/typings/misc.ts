@@ -1,4 +1,4 @@
-import type { RouteLocationNamedRaw } from 'vue-router/auto';
+import type { RouteLocationNamedRaw } from '#vue-router';
 import type { RouteNamedMap } from 'vue-router/auto/routes';
 
 import { availableSystemList } from '../constants';

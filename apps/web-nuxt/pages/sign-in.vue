@@ -54,7 +54,7 @@
           >
             <template #prefix>
               <div class="el-input__icon">
-                <IconMdiAccount></IconMdiAccount>
+                <Icon name="mdi:account"></Icon>
               </div>
             </template>
           </BaseInput>
@@ -70,7 +70,7 @@
           >
             <template #prefix>
               <div class="el-input__icon">
-                <IconMdiLockOpen></IconMdiLockOpen>
+                <Icon name="mdi:lock-open"></Icon>
               </div>
             </template>
           </BaseInput>
@@ -87,7 +87,7 @@
               >
                 <template #prefix>
                   <div class="el-input__icon">
-                    <IconMdiImage></IconMdiImage>
+                    <Icon name="mdi:image"></Icon>
                   </div>
                 </template>
               </BaseInput>
@@ -133,9 +133,7 @@
                 @after-enter="handleLoginSuccess"
                 @enter-cancelled="handleLoginSuccess"
               >
-                <IconMdiCheckCircleOutline
-                  v-if="isLoggedIn"
-                ></IconMdiCheckCircleOutline>
+                <Icon v-if="isLoggedIn" name="mdi:check-circle-outline"></Icon>
                 <span v-else>{{ loginButtonText }}</span>
               </transition>
             </el-button>

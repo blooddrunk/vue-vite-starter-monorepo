@@ -5,7 +5,7 @@
 <script lang="ts" setup>
 definePageMeta({
   redirect: {
-    name: '/mobile/category',
+    name: 'mobile-category',
   },
   layout: 'tabbar',
 });

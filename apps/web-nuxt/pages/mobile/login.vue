@@ -80,7 +80,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { RouteLocationResolved } from 'vue-router/auto';
+import type { RouteLocationResolved } from '#vue-router';
 
 import { showFailToast, showToast } from 'vant';
 import { useForm } from 'vee-validate';

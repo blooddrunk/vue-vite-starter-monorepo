@@ -12,5 +12,3 @@ export type DeepMaybeRef<T> = T extends Ref<infer V>
   : T extends Array<any> | object
   ? { [K in keyof T]: DeepMaybeRef<T[K]> }
   : MaybeRef<T>;
-
-export type UserPlugin = (app: App) => void | Promise<void>;

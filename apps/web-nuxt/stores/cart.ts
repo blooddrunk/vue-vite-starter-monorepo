@@ -1,6 +1,7 @@
 import type { CartItem, StagedOrderInfo } from '@/typings';
 
 import { precisionFixed } from '@jn/shared';
+import { useStorage } from '@vueuse/core';
 import { cloneDeep } from 'lodash-es';
 import { acceptHMRUpdate, defineStore } from 'pinia';
 

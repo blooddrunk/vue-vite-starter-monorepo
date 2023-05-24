@@ -20,11 +20,10 @@
 </template>
 
 <script lang="ts" setup>
-import type { RouteLocationRaw } from 'vue-router/auto';
+import type { RouteLocationRaw } from '#vue-router';
 import type { RouteNamedMap } from 'vue-router/auto/routes';
 
 import { ref, shallowRef, watch } from 'vue';
-import { useRoute } from 'vue-router/auto';
 
 const route = useRoute();
 const tabbarItems = shallowRef<
@@ -61,7 +60,7 @@ const tabbarItems = shallowRef<
     name: '我的',
     path: '/mobile/user',
     routeName: 'mobile-user',
-    icon: 'mdi:accout',
+    icon: 'mdi:account',
     dot: false,
   },
 ]);

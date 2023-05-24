@@ -1,7 +1,7 @@
 <template>
-  <main class="h-screen bg-light pb-[50px]">
+  <main class="bg-light h-screen pb-[50px]">
     <div>
-      <router-view></router-view>
+      <slot></slot>
     </div>
 
     <TheTabbar></TheTabbar>

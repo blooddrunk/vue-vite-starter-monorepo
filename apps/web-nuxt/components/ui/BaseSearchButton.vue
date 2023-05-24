@@ -1,6 +1,6 @@
 <template>
   <el-button v-bind="$attrs" type="primary" native-type="submit">
-    <IconMdiMagnify></IconMdiMagnify>
+    <Icon name="mdi:magnify"></Icon>
     {{ text }}
   </el-button>
 </template>

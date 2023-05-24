@@ -8,18 +8,18 @@
 
     <el-dropdown class="ml-auto" size="medium" @command="handleCommand">
       <div class="flex items-center text-white">
-        <IconMdiAccountCircle class="text-[1.3em]"></IconMdiAccountCircle>
+        <Icon name="mdi:account-circle" class="text-[1.3em]"></Icon>
         <span class="ml-1">{{ authStore.userName }}</span>
       </div>
       <template #dropdown>
         <el-dropdown-menu>
           <el-dropdown-item command="password">
             修改密码
-            <IconMdiKey class="ml-1"> </IconMdiKey>
+            <Icon name="mdi:key" class="ml-1"> </Icon>
           </el-dropdown-item>
           <el-dropdown-item command="logout">
             退出登录
-            <IconMdiLogout class="ml-1"> </IconMdiLogout>
+            <Icon name="mdi:logout" class="ml-1"> </Icon>
           </el-dropdown-item>
         </el-dropdown-menu>
       </template>

@@ -11,11 +11,10 @@ export default defineNuxtConfig({
   ssr: false,
 
   components: [
-    { path: '~/components', extensions: ['vue'] },
+    { path: '@/components', extensions: ['vue'] },
     {
       path: '@/components/ui',
       pathPrefix: false,
-      prefix: 'base',
       extensions: ['vue'],
     },
     {
@@ -67,5 +66,11 @@ export default defineNuxtConfig({
 
   typescript: {
     shim: false,
+  },
+
+  vite: {
+    define: {
+      __DEV__: process.env.NODE_ENV === 'development',
+    },
   },
 });

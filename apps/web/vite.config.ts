@@ -32,7 +32,7 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@/typings': path.resolve(__dirname, 'src/utils/typings'),
         '@/constants': path.resolve(__dirname, 'src/utils/constants'),
-        '@/modules/': `${path.resolve(__dirname, 'src/components/modules')}/`,
+        '@/modules': path.resolve(__dirname, 'src/components/modules'),
         '@/': `${path.resolve(__dirname, 'src')}/`,
       },
     },
@@ -53,7 +53,7 @@ export default defineConfig(({ mode }) => {
           vueJsx: VueJsx(),
         },
 
-        // ? This should be addressed in vue@3
+        // ? This should be addressed in vue@3.3
         // betterDefine: true,
       }),
 

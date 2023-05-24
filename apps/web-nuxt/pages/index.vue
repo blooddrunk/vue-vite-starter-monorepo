@@ -12,11 +12,18 @@
 </template>
 
 <script setup lang="ts">
+import type { RouteLocationRaw } from '#vue-router';
+
 definePageMeta({
   requiresAuth: false,
 });
 
-const menuList = ref([
+const menuList = ref<
+  {
+    text: string;
+    to: RouteLocationRaw;
+  }[]
+>([
   {
     text: 'Simple list',
     to: '/simple-list',
@@ -44,7 +51,7 @@ const menuList = ref([
 
   {
     text: 'Mobile layout with vant',
-    to: '/mobile/',
+    to: '/mobile',
   },
 ]);
 </script>
