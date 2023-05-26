@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="routeLocation">
+  <NuxtLink :to="routeLocation">
     <figure class="shadow-light mt-3 rounded-md bg-white p-2 shadow">
       <van-image
         class="h-32 w-full"
@@ -33,7 +33,7 @@
         </span>
       </div>
     </figure>
-  </router-link>
+  </NuxtLink>
 </template>
 
 <script lang="ts" setup>

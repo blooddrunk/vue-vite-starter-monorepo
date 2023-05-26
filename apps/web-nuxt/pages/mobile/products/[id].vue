@@ -38,7 +38,7 @@
         加入购物车
       </van-button>
 
-      <router-link v-slot="{ navigate }" custom :to="checkoutRoute">
+      <NuxtLink v-slot="{ navigate }" custom :to="checkoutRoute">
         <van-button
           class="!ml-3"
           type="primary"
@@ -48,7 +48,7 @@
         >
           立刻购买
         </van-button>
-      </router-link>
+      </NuxtLink>
     </PageFooter>
   </article>
 </template>
@@ -56,6 +56,7 @@
 <script lang="ts" setup>
 import type { RouteLocationRaw } from '#vue-router';
 
+import { useRouteParams } from '@vueuse/router';
 import { showFailToast } from 'vant';
 
 definePageMeta({
@@ -64,28 +65,26 @@ definePageMeta({
   canNavBack: true,
 });
 
-const props = defineProps<{
-  id: string;
-}>();
+const id = useRouteParams('id', '', { transform: String });
 
 const { data, isLoading, execute } = useProductDetail();
-execute(props.id);
+execute(id.value);
 
 const cart = useCartStore();
 const addToCart = async () => {
-  const { error } = await cart.addItem({
+  const { errorMessage } = await cart.addItem({
     ...data.value,
     quantity: 1,
   });
-  if (error.value) {
-    showFailToast(error.value.message);
+  if (errorMessage.value) {
+    showFailToast(errorMessage.value);
   }
 };
 
 const checkoutRoute = computed<RouteLocationRaw<'mobile-order'>>(() => ({
   name: 'mobile-order',
   query: {
-    productId: props.id,
+    productId: id.value,
   },
 }));
 </script>

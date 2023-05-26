@@ -2,8 +2,8 @@ import type { MenuItem, SystemList, SystemValue } from '@/typings';
 
 import { flattenTree } from '@jn/shared';
 import { acceptHMRUpdate, defineStore } from 'pinia';
+import { availableSystemList } from '~/utils/constants';
 
-import { availableSystemList } from '@/constants';
 import {
   getFirstNavigableMenu as _getFirstNavigableMenu,
   allMenuList,

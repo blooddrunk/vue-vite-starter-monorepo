@@ -4,11 +4,11 @@
   >
     <section class="flex flex-col items-center pt-20">
       <header class="flex items-center">
-        <router-link to="/">
+        <NuxtLink to="/">
           <h2 class="text-primary flex items-center py-5 text-3xl font-bold">
             <span>Vue 3</span>
           </h2>
-        </router-link>
+        </NuxtLink>
 
         <el-button
           class="!ml-3 !text-xl"

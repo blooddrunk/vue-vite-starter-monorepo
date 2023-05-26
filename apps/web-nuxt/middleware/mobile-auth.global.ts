@@ -1,5 +1,5 @@
 export default defineNuxtRouteMiddleware((to) => {
-  if (!to.name || !String(to.name).startsWith('/mobile')) {
+  if (!to.name || !String(to.name).startsWith('mobile')) {
     return;
   }
 

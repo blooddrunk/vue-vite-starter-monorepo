@@ -11,11 +11,11 @@
     </van-image>
 
     <PageFooter class="!bottom-[50px] justify-center">
-      <router-link v-slot="{ navigate }" custom to="/mobile/appointment">
+      <NuxtLink v-slot="{ navigate }" custom to="/mobile/appointment">
         <van-button class="w-11/12" type="primary" round @click="navigate">
           立即预约
         </van-button>
-      </router-link>
+      </NuxtLink>
     </PageFooter>
   </article>
 </template>

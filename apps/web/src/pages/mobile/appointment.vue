@@ -25,23 +25,31 @@
       position="bottom"
       close-on-popstate
     >
-      <van-datetime-picker
-        type="datehour"
-        v-bind="timePickerOptions"
+      <van-picker-group
+        title="上门时间"
+        :tabs="['选择日期', '选择时间']"
         @confirm="handleServiceTimeChange"
         @cancel="isTimePickerVisible = false"
-      />
+      >
+        <van-date-picker v-model="currentDate" :min-date="minDate" />
+        <van-time-picker
+          v-model="currentTime"
+          :columns-type="['hour', 'minute', 'second']"
+        />
+      </van-picker-group>
     </van-popup>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { CustomizationRequest } from '@/typings';
+import type { AddressEditInfo, PickerConfirmEventParams } from 'vant';
+
 import { areaList } from '@vant/area-data';
-import { format } from 'date-fns';
+import { addDays, format } from 'date-fns';
 import { showFailToast, showSuccessToast } from 'vant';
-import type { AddressEditInfo } from 'vant';
 import { useRouter } from 'vue-router';
+
+import { CustomizationRequest } from '@/typings';
 
 definePage({
   meta: {
@@ -71,21 +79,19 @@ const serviceTimeRule = [
   },
 ];
 const isTimePickerVisible = ref(false);
-const timePickerOptions = {
-  minDate: new Date(),
-  formatter: (type: string, value: string) =>
-    type === 'year'
-      ? `${value}年`
-      : type === 'month'
-      ? `${value}月`
-      : type === 'day'
-      ? `${value}日`
-      : type === 'hour'
-      ? `${value}时`
-      : value,
-};
-const handleServiceTimeChange = (value: Date) => {
-  serviceTime.value = value;
+const minDate = addDays(new Date(), 1);
+const currentDate = ref([]);
+const currentTime = ref([]);
+
+const handleServiceTimeChange = (value: PickerConfirmEventParams[]) => {
+  serviceTime.value = new Date(
+    +value[0].selectedValues[0],
+    +value[0].selectedValues[1] - 1,
+    +value[0].selectedValues[2],
+    +value[1].selectedValues[0],
+    +value[1].selectedValues[1],
+    +value[1].selectedValues[2]
+  );
   isTimePickerVisible.value = false;
 };
 
@@ -96,9 +102,9 @@ const handleSubmit = async (content: AddressEditInfo) => {
     servicePhone: content.tel,
     address: `${content.province} ${content.country} ${content.county} ${content.addressDetail}`,
   };
-  const { error } = await execute(payload);
-  if (error.value) {
-    showFailToast(error.value.message);
+  const { errorMessage } = await execute(payload);
+  if (errorMessage.value) {
+    showFailToast(errorMessage.value);
   } else {
     showSuccessToast({
       message: '预约成功!',

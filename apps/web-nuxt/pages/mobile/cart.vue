@@ -20,7 +20,7 @@
         </strong>
       </span>
 
-      <router-link v-slot="{ navigate }" custom to="/mobile/order">
+      <NuxtLink v-slot="{ navigate }" custom to="/mobile/order">
         <van-button
           class="min-w-28 !ml-auto"
           type="primary"
@@ -30,7 +30,7 @@
         >
           去结算({{ cart.checkedQuantity }})
         </van-button>
-      </router-link>
+      </NuxtLink>
     </PageFooter>
   </article>
 </template>

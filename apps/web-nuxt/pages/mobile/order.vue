@@ -42,9 +42,9 @@
       icon-size="16px"
     >
       我已认真阅读并同意
-      <router-link class="text-primary" to="/mobile/service-agreement">
+      <NuxtLink class="text-primary" to="/mobile/service-agreement">
         《服务协议》
-      </router-link>
+      </NuxtLink>
     </van-checkbox>
 
     <PageFooter>
@@ -55,7 +55,7 @@
         </strong>
       </span>
 
-      <router-link v-slot="{ navigate }" custom to="/mobile/address">
+      <NuxtLink v-slot="{ navigate }" custom to="/mobile/address">
         <van-button
           class="!ml-auto"
           type="primary"
@@ -65,7 +65,7 @@
         >
           订单提交
         </van-button>
-      </router-link>
+      </NuxtLink>
     </PageFooter>
   </article>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <router-link
+  <NuxtLink
     class="shadow-light mt-3 block rounded-md bg-white p-2 shadow"
     :to="routeLocation"
   >
@@ -41,7 +41,7 @@
         元
       </span>
     </footer>
-  </router-link>
+  </NuxtLink>
 </template>
 
 <script lang="ts" setup>

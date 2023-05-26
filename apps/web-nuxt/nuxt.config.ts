@@ -1,14 +1,25 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+console.log(fileURLToPath(new URL('./utils/constants', import.meta.url)));
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   alias: {
     '@/typings': path.resolve(__dirname, 'utils/typings'),
-    '@/constants': path.resolve(__dirname, 'utils/constants'),
-    '@/modules': path.resolve(__dirname, 'components/modules'),
+  },
+
+  app: {
+    baseURL: process.env.NUXT_PUBLIC_PATH || '/',
   },
 
   ssr: false,
+
+  router: {
+    options: {
+      hashMode: true,
+    },
+  },
 
   components: [
     { path: '@/components', extensions: ['vue'] },

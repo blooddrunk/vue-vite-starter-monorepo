@@ -11,7 +11,7 @@ const notifyPermission = (message: string) =>
 
 export default defineNuxtRouteMiddleware((to) => {
   // TODO: remove this
-  if (to.name && String(to.name).startsWith('/mobile')) {
+  if (to.name && String(to.name).startsWith('mobile')) {
     return;
   }
 

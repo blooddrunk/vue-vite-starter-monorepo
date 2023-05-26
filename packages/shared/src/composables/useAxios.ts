@@ -3,7 +3,6 @@
  */
 
 import type {
-  AxiosError,
   AxiosInstance,
   AxiosRequestConfig,
   AxiosResponse,
@@ -45,7 +44,7 @@ export interface UseAxiosReturn<T, R = AxiosResponse<T>, D = any> {
   /**
    * Any errors that may have occurred
    */
-  error: ShallowRef<AxiosError<T, D> | undefined>;
+  error: ShallowRef<unknown | undefined>;
   errorMessage: ComputedRef<string | undefined>;
 
   /**
@@ -88,6 +87,11 @@ export interface UseAxiosOptions<T = any> {
    * Callback when success is caught.
    */
   onSuccess?: (data: T) => void;
+
+  /**
+   * Callback when request is finished.
+   */
+  onFinish?: () => void;
 }
 
 export const isAxiosInstance = (val: any) => !!val?.request;
@@ -125,7 +129,7 @@ export function useAxios<T = any, R = AxiosResponse<T>, D = any>(
   }
 
   let options: UseAxiosOptions = {
-    immediate: !!defaultConfig.url,
+    immediate: false,
     shallow: true,
   };
   if (args.length > 2) {
@@ -144,7 +148,7 @@ export function useAxios<T = any, R = AxiosResponse<T>, D = any>(
   const isFinished = ref(false);
   const isLoading = ref(false);
   const isAborted = ref(false);
-  const error = shallowRef<AxiosError<T>>();
+  const error = shallowRef<unknown>();
 
   const cancelTokenSource = axios.CancelToken.source;
   let cancelToken: CancelTokenSource = cancelTokenSource();
@@ -173,6 +177,7 @@ export function useAxios<T = any, R = AxiosResponse<T>, D = any>(
     onFulfilled,
     onRejected
   ) => waitUntilFinished().then(onFulfilled, onRejected);
+
   const execute: UseAxiosReturn<T, R, D>['execute'] = async (
     config?: AxiosRequestConfig
   ) => {
@@ -198,6 +203,7 @@ export function useAxios<T = any, R = AxiosResponse<T>, D = any>(
       error.value = e;
       options.onError?.(e);
     } finally {
+      options.onFinish?.();
       loading(false);
     }
 
@@ -211,7 +217,7 @@ export function useAxios<T = any, R = AxiosResponse<T>, D = any>(
     response,
     data,
     error,
-    errorMessage: computed(() => error.value?.message),
+    errorMessage: computed(() => (error.value as any)?.message),
     finished: isFinished,
     loading: isLoading,
     isFinished,

@@ -38,7 +38,7 @@ const handleCommand = async (command: string) => {
   switch (command) {
     case 'logout':
       await authStore.logout();
-      router.push({ name: '/sign-in' });
+      router.push({ name: 'sign-in' });
       break;
 
     default:

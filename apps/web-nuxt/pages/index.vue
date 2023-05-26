@@ -1,12 +1,12 @@
 <template>
   <ul class="m-auto w-2/3 list-none text-lg md:w-1/2">
     <li v-for="item in menuList" :key="item.text" class="border-b px-2 py-3">
-      <router-link
+      <NuxtLink
         class="flex cursor-pointer items-center justify-between"
         :to="item.to"
       >
         {{ item.text }}
-      </router-link>
+      </NuxtLink>
     </li>
   </ul>
 </template>

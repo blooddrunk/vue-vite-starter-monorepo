@@ -1,8 +1,8 @@
 <template>
   <van-badge class="leading-none" :content="cart.quantity" max="99">
-    <router-link to="/mobile/cart">
+    <NuxtLink to="/mobile/cart">
       <Icon name="mdi:cart" class="text-[1.3em]"></Icon>
-    </router-link>
+    </NuxtLink>
   </van-badge>
 </template>
 
