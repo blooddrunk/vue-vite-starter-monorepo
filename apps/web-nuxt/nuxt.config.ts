@@ -1,12 +1,10 @@
-import path from 'path';
 import { fileURLToPath } from 'url';
-
-console.log(fileURLToPath(new URL('./utils/constants', import.meta.url)));
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   alias: {
-    '@/typings': path.resolve(__dirname, 'utils/typings'),
+    // '@/typings': path.resolve(__dirname, 'utils/typings'),
+    '@/typings': fileURLToPath(new URL('./utils/typings', import.meta.url)),
   },
 
   app: {
