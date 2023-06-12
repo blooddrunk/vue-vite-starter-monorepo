@@ -12,17 +12,18 @@ module.exports = {
    * options of @ianvs/prettier-plugin-sort-imports
    * */
   importOrder: [
+    '',
+    '<BUILTIN_MODULES>',
+    '',
     '<TYPES>',
     '<TYPES>^[./]',
+    '',
     '<THIRD_PARTY_MODULES>',
+    '',
     '(.*)\\.(vue|tsx)$',
+    '',
     '^@/(.*)$',
     '^[./]',
+    '',
   ],
-  importOrderBuiltinModulesToTop: true,
-  importOrderCaseInsensitive: true,
-  importOrderMergeDuplicateImports: true,
-  importOrderCombineTypeAndValueImports: true,
-  importOrderSeparation: true,
-  importOrderSortSpecifiers: true,
 };
