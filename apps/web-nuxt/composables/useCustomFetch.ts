@@ -3,9 +3,11 @@ import type { UseFetchOptions } from 'nuxt/app';
 import { defu } from 'defu';
 import { isPlainObject } from 'lodash-es';
 
+type ErrorHandler = UseFetchOptions<any>['onRequestError'];
+
 export type UseCustomFetchOptions<T> = UseFetchOptions<T> & {
   alertOnError?: boolean;
-  onError: UseFetchOptions<T>['onRequestError'];
+  onError: ErrorHandler;
 };
 
 export type ServerResponse<T = any> = {
@@ -19,15 +21,15 @@ const isServerResponse = <T>(r: any): r is ServerResponse<T> => {
   return isPlainObject(r) && 'code' in r && 'message' in r;
 };
 
-export function useCustomFetch<TData, TRes = ServerResponse<TData>>(
+export function useCustomFetch<T>(
   url: string,
-  options: UseFetchOptions<TRes, TData> = {}
+  options: UseFetchOptions<T> = {}
 ) {
-  const defaults: UseFetchOptions<TRes, TData> = {
+  const defaults: UseFetchOptions<T> = {
     ignoreResponseError: true,
 
     transform: (data) => {
-      if (isServerResponse<TData>(data)) {
+      if (isServerResponse<T>(data)) {
         return data.data;
       }
       return data;
