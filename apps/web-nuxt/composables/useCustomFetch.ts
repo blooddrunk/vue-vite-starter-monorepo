@@ -3,11 +3,12 @@ import type { UseFetchOptions } from 'nuxt/app';
 import { defu } from 'defu';
 import { isPlainObject } from 'lodash-es';
 
-type ErrorHandler = UseFetchOptions<any>['onRequestError'];
+type ErrorHandler = (e: unknown) => void;
 
 export type UseCustomFetchOptions<T> = UseFetchOptions<T> & {
+  validateResponse?: boolean;
   alertOnError?: boolean;
-  onError: ErrorHandler;
+  onError?: ErrorHandler;
 };
 
 export type ServerResponse<T = any> = {
@@ -21,11 +22,22 @@ const isServerResponse = <T>(r: any): r is ServerResponse<T> => {
   return isPlainObject(r) && 'code' in r && 'message' in r;
 };
 
+const defaultErrorHandler = (error: Error) => {
+  console.error(error);
+  alert(error.message || '出错了');
+};
+
+// ? see https://github.com/nuxt/nuxt/issues/14936
+// ? and https://github.com/nuxt/nuxt/issues/14736
+
 export function useCustomFetch<T>(
   url: string,
-  options: UseFetchOptions<T> = {}
+  options: UseCustomFetchOptions<T> = {
+    validateResponse: true,
+    alertOnError: true,
+  }
 ) {
-  const defaults: UseFetchOptions<T> = {
+  const defaults: UseCustomFetchOptions<T> = {
     ignoreResponseError: true,
 
     transform: (data) => {
@@ -35,12 +47,35 @@ export function useCustomFetch<T>(
       return data;
     },
 
-    onResponse(_ctx) {
-      // _ctx.response._data = new myBusinessResponse(_ctx.response._data);
+    onRequestError({ error }) {
+      if (options.onError) {
+        options.onError?.(error);
+      } else if (options.alertOnError) {
+        defaultErrorHandler(error);
+      }
+    },
+
+    onResponse({ response }) {
+      if (options.validateResponse && isServerResponse(response._data)) {
+        const { code = 200, message = '未知错误', ...rest } = response._data;
+        switch (`${code}`) {
+          case '200':
+            response._data = rest;
+            break;
+          default: {
+            throw new Error(message);
+          }
+        }
+      }
     },
 
     onResponseError(_ctx) {
-      // throw new myBusinessError()
+      const error = new Error(_ctx.response.statusText);
+      if (options.onError) {
+        options.onError?.(error);
+      } else if (options.alertOnError) {
+        defaultErrorHandler(error);
+      }
     },
   };
 
