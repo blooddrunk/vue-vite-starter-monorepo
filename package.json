@@ -13,10 +13,10 @@
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
     "@jn/eslint-config": "workspace:*",
-    "eslint": "^8.43.0",
-    "prettier": "^2.8.8",
+    "eslint": "^8.44.0",
+    "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.3.0",
-    "typescript": "^5.1.3"
+    "typescript": "^5.1.6"
   },
   "pnpm": {
     "overrides": {

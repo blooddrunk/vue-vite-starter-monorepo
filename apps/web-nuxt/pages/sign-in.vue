@@ -6,7 +6,7 @@
       <AppLogo size="large"></AppLogo>
       <img
         class="mt-16"
-        src="@/assets/images/login.png"
+        src="~/assets/images/login.png"
         alt="login background"
       />
     </div>

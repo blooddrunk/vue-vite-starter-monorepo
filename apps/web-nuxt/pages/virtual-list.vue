@@ -98,9 +98,6 @@ const { data, execute, isLoading } = useAxios<ListItem[]>(
   { immediate: false }
 );
 
-const { data: test } = useCustomFetch('https://hn.algolia.com/api/v1/search', {
-  transform: (data: QueryResult) => data.hits || [],
-});
 
 const handleSearch = handleSubmit(() => {
   execute({

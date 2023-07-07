@@ -11,12 +11,12 @@
   "dependencies": {
     "@jn/shared": "workspace:*",
     "@vant/area-data": "^1.4.1",
-    "@vee-validate/i18n": "^4.10.1",
-    "@vee-validate/rules": "^4.10.1",
-    "@vueuse/components": "^10.2.0",
-    "@vueuse/core": "^10.2.0",
+    "@vee-validate/i18n": "^4.10.5",
+    "@vee-validate/rules": "^4.10.5",
+    "@vueuse/components": "^10.2.1",
+    "@vueuse/core": "^10.2.1",
     "@vueuse/head": "^1.1.26",
-    "@vueuse/router": "^10.2.0",
+    "@vueuse/router": "^10.2.1",
     "animate.css": "^4.1.1",
     "axios": "^1.4.0",
     "echarts": "^5.4.2",
@@ -29,22 +29,22 @@
     "pinia": "^2.1.4",
     "resize-detector": "^0.3.0",
     "type-fest": "^3.12.0",
-    "vant": "^4.6.0",
-    "vee-validate": "^4.10.1",
+    "vant": "^4.6.1",
+    "vee-validate": "^4.10.5",
     "vue-echarts": "^6.6.0"
   },
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.5",
     "@jn/eslint-config": "workspace:*",
     "@jn/tailwind-config": "workspace:*",
-    "@nuxt/devtools": "^0.6.3",
+    "@nuxt/devtools": "^0.6.7",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@pinia/nuxt": "^0.4.11",
-    "@types/node": "^20.3.1",
+    "@types/node": "^20.4.0",
     "@types/nprogress": "^0.2.0",
     "@vant/nuxt": "^1.0.2",
-    "@vueuse/nuxt": "^10.2.0",
+    "@vueuse/nuxt": "^10.2.1",
     "nuxt": "^3.6.0",
-    "nuxt-icon": "^0.4.1"
+    "nuxt-icon": "^0.4.2"
   }
 }
