@@ -329,6 +329,8 @@
     "watchTriggerable": "readonly",
     "watchWithFilter": "readonly",
     "whenever": "readonly",
-    "toValue": "readonly"
+    "toValue": "readonly",
+    "injectLocal": "readonly",
+    "provideLocal": "readonly"
   }
 }
