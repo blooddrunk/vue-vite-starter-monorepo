@@ -78,10 +78,10 @@
 </template>
 
 <script lang="ts" setup>
+import type { Product } from '@/typings';
+
 import { ElMessage } from 'element-plus';
 import { useForm } from 'vee-validate';
-
-import { Product } from '@/typings';
 
 const props = defineProps<{
   addProduct: (p: Product) => void;

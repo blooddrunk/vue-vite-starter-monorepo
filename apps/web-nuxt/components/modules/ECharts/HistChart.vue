@@ -13,7 +13,6 @@
 
 <script lang="ts" setup>
 import { normalizeSeries } from '@jn/shared';
-import { ref } from 'vue';
 
 const random = () => {
   return Math.round(300 + Math.random() * 700) / 10;
@@ -30,7 +29,7 @@ const { dimensions, series } = normalizeSeries(
     { name: '2016', displayName: '二零一六', isPercentage: true },
     '2017',
   ],
-  'bar'
+  'bar',
 );
 
 const dataSource = ref(
@@ -42,8 +41,8 @@ const dataSource = ref(
       '2016': random(),
       '2016_Percentage': `${random()}%`,
       '2017': random(),
-    })
-  )
+    }),
+  ),
 );
 
 const option = {

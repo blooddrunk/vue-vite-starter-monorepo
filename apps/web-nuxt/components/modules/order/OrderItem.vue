@@ -45,8 +45,8 @@
 </template>
 
 <script lang="ts" setup>
-import type { RouteLocationRaw } from '#vue-router';
 import type { OrderItem } from '@/typings';
+import type { RouteLocationRaw } from '#vue-router';
 
 import { format } from 'date-fns';
 
@@ -63,7 +63,7 @@ const statusClass = computed(
       已下单: 'text-teal-400',
       已办理: 'text-green-500',
       已撤单: 'text-slate-300',
-    }[props.item.orderStatus])
+    })[props.item.orderStatus],
 );
 
 const routeLocation: RouteLocationRaw = {

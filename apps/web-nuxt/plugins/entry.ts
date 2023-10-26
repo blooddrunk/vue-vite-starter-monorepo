@@ -6,9 +6,3 @@ export default defineNuxtPlugin(() => {
     },
   };
 });
-
-// declare module 'vue' {
-//   export interface ComponentCustomProperties {
-//     $appName: string;
-//   }
-// }

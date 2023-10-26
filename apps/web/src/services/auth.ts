@@ -13,7 +13,7 @@ export const useLogin = () => {
   const error = ref<string | null>('');
 
   const loginRequest = async (
-    payload: LoginInfo
+    payload: LoginInfo,
   ): Promise<UserInfo | undefined> => {
     isLoading.value = true;
 
@@ -73,7 +73,7 @@ export const useMobileLogin = () => {
   const error = ref<string | null>('');
 
   const loginRequest = async (
-    payload: MobileLoginInfo
+    payload: MobileLoginInfo,
   ): Promise<MobileUserInfo | undefined> => {
     isLoading.value = true;
 

@@ -40,15 +40,16 @@
 </template>
 
 <script lang="ts" setup>
-import { ElMessage } from 'element-plus';
+import type { Product } from '@/typings';
 
-import { Product } from '@/typings';
+import { ElMessage } from 'element-plus';
 
 definePageMeta({
   requiresAuth: false,
 });
 
 const simpleFormStore = useSimpleFormStore();
+simpleFormStore.fetchProducts();
 
 const getDeleteAction = (row: Product) => {
   return async () => {

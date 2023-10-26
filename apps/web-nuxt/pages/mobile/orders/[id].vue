@@ -123,11 +123,11 @@ if (order.isItemsEmpty) {
 }
 
 const currentOrderItem = computed(() =>
-  order.items.find((item) => item.orderNumber === props.id)
+  order.items.find((item) => item.orderNumber === props.id),
 );
 
 const shouldShowEmptyPlaceholder = computed(
-  () => !currentOrderItem.value && !order.isItemsLoading
+  () => !currentOrderItem.value && !order.isItemsLoading,
 );
 
 const { isLoading: isCancelPending, execute: onOrderCancel } = cancelOrder();
@@ -146,7 +146,7 @@ const cancelReasonList = computed<ActionSheetAction[]>(() =>
       };
     }
     return item;
-  })
+  }),
 );
 const isCancelActionSheetVisible = ref(false);
 // const toggleActionStateByIndex = (targetIndex: number, loading?: boolean) => {
@@ -172,7 +172,7 @@ const handleCancel = async (action: ActionSheetAction, index: number) => {
 
     const { error } = await onOrderCancel(currentOrderItem.value!);
     if (error.value) {
-      showFailToast(error.value.message);
+      showFailToast((error.value as any).message);
     } else {
       showToast('撤单成功');
     }

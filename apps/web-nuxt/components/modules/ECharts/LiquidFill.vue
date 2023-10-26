@@ -28,13 +28,13 @@
 </template>
 
 <script setup lang="ts">
+import type { L2Item } from '@/services/chart.js';
+
 import {
   precisionRound,
   toCompactDisplayString,
   toPercentage,
 } from '@jn/shared';
-
-import { L2Item } from '@/services/chart.js';
 
 const chartStore = useChartStore();
 

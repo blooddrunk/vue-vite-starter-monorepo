@@ -12,7 +12,7 @@
       </div>
 
       <header
-        class="absolute left-6 top-6 p-2 rounded-md text-primary font-semibold shadow-md shadow-primary"
+        class="text-primary shadow-primary absolute left-6 top-6 rounded-md p-2 font-semibold shadow-md"
       >
         <h3>{{ chartStore.currentCity }}</h3>
       </header>
@@ -22,7 +22,6 @@
 
 <script lang="ts" setup>
 import { storeKeys } from '@/services/chart';
-import BaseMap from '@/components/UI/BaseMap.vue';
 
 const chartStore = useChartStore();
 const mapRef = ref<InstanceType<typeof BaseMap>>();
@@ -32,7 +31,7 @@ const mapData = shallowRef(
     name,
     value: null,
     selected: name === chartStore.currentCity,
-  }))
+  })),
 );
 const mapOption = {
   tooltip: {

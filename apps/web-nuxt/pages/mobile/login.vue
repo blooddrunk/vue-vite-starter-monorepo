@@ -80,12 +80,11 @@
 </template>
 
 <script lang="ts" setup>
+import type { MobileLoginInfo } from '@/typings';
 import type { RouteLocationResolved } from '#vue-router';
 
 import { showFailToast, showToast } from 'vant';
 import { useForm } from 'vee-validate';
-
-import { MobileLoginInfo } from '@/typings';
 
 definePageMeta({
   layout: 'empty',
@@ -125,15 +124,15 @@ const {
     }
   },
   1000,
-  { immediate: false, immediateCallback: true }
+  { immediate: false, immediateCallback: true },
 );
 const authCodeButtonText = computed(() =>
-  isCountdownActive.value ? `${countdown.value}s后重新获取` : '获取验证码'
+  isCountdownActive.value ? `${countdown.value}s后重新获取` : '获取验证码',
 );
 
 const { isLoading: isAuthCodeLoading, execute: fetchAuthCode } = useAuthCode();
 const shouldDisableFetchAuthCode = computed(
-  () => isAuthCodeLoading.value || isCountdownActive.value
+  () => isAuthCodeLoading.value || isCountdownActive.value,
 );
 const handleAuthCodeRequest = async () => {
   const { valid } = await validateField('mobile');
@@ -152,7 +151,7 @@ const handleAuthCodeRequest = async () => {
 };
 
 const isUserAgreementChecked = ref(
-  authStore.stagedLoginInfo.isUserAgreementChecked ?? false
+  authStore.stagedLoginInfo.isUserAgreementChecked ?? false,
 );
 const checkboxClass = ref('');
 const handleAnimationEnd = () => {

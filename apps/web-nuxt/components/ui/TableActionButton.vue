@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ComponentSize, ButtonType } from 'element-plus';
+import type { ButtonType, ComponentSize } from 'element-plus';
 
 type ButtonProps = Partial<{
   size: ComponentSize;
@@ -35,8 +35,8 @@ const buttonProps = computed(() =>
       type: 'text',
       size: 'mini',
     },
-    props.buttonProps
-  )
+    props.buttonProps,
+  ),
 );
 
 const isLoading = computed(() => props.rowProps.row.loading);

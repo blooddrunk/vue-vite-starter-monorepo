@@ -19,17 +19,17 @@
           ></van-image>
 
           <div class="col-span-5 self-start">
-            <div class="break-all leading-none text-medium line-clamp-3">
-              <figcaption class="inline text-dark">
+            <div class="text-medium line-clamp-3 break-all leading-none">
+              <figcaption class="text-dark inline">
                 {{ item.title }}
               </figcaption>
-              <span class="ml-2 text-xs text-light">
+              <span class="text-light ml-2 text-xs">
                 {{ item.body }}
               </span>
             </div>
             <div class="mt-2 flex items-center">
-              <span class="font-bold text-primary">{{ item.price }}</span>
-              <span class="ml-1 text-xs text-primary">元/月</span>
+              <span class="text-primary font-bold">{{ item.price }}</span>
+              <span class="text-primary ml-1 text-xs">元/月</span>
 
               <span v-if="readonly" class="ml-auto text-sm font-semibold">
                 x{{ quantity }}
@@ -64,6 +64,7 @@
 
 <script lang="ts" setup>
 import type { CartItem } from '@/typings';
+
 import { debouncedWatch, useVModel } from '@vueuse/core';
 import { showConfirmDialog, showFailToast } from 'vant';
 
@@ -94,9 +95,9 @@ watch(
   () => cart.itemPatchingError || cart.itemRemovingError,
   (value) => {
     if (value) {
-      showFailToast(value.message);
+      showFailToast((value as any).message);
     }
-  }
+  },
 );
 
 debouncedWatch(
@@ -106,7 +107,7 @@ debouncedWatch(
   },
   {
     debounce: 500,
-  }
+  },
 );
 const handleRemove = async () => {
   try {

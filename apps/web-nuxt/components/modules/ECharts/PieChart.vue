@@ -5,7 +5,7 @@
         <BaseChart :data="data" :option="chartOption" type="pie"></BaseChart>
       </div>
 
-      <div class="text-lg 3xl:2xl text-primary font-semibold">
+      <div class="3xl:2xl text-primary text-lg font-semibold">
         <div
           class="absolute left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2"
         >
@@ -23,6 +23,7 @@
 
 <script setup lang="ts">
 import type { EChartsOption, PieSeriesOption } from 'echarts';
+
 import { zipWith } from 'lodash-es';
 
 const chartStore = useChartStore();

@@ -20,16 +20,16 @@
 </template>
 
 <script lang="ts" setup>
-import { toPercentage } from '@jn/shared';
+import type { C1Item } from '@/services/chart';
 
-import { C1Item } from '@/services/chart';
+import { toPercentage } from '@jn/shared';
 
 type Props = {
   item: C1Item;
 };
 
 const props = withDefaults(defineProps<Props>(), {
-  item: () => ({} as C1Item),
+  item: () => ({}) as C1Item,
 });
 
 const primaryColor = computed(() => props.item.color?.[0] ?? '#0891b2');

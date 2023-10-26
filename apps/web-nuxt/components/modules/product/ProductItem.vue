@@ -37,8 +37,8 @@
 </template>
 
 <script lang="ts" setup>
-import type { RouteLocationRaw } from '#vue-router';
 import type { ProductItem } from '@/typings';
+import type { RouteLocationRaw } from '#vue-router';
 
 import { showFailToast } from 'vant';
 

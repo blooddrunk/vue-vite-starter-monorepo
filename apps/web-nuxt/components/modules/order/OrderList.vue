@@ -23,7 +23,7 @@ withDefaults(
   {
     loading: false,
     readonly: false,
-  }
+  },
 );
 
 const placeholderItems = [...Array(3).keys()].map((id) => ({

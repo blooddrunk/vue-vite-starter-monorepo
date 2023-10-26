@@ -1,4 +1,4 @@
-import type { App, Ref } from 'vue';
+import type { Ref } from 'vue';
 
 export * from './auth';
 export * from './misc';

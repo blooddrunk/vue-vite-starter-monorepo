@@ -13,7 +13,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Opinionated Vite/Vue 3 Starter Template',
+      content: 'Opinionated Nuxt3(SPA) Starter Template',
     },
   ],
 });

@@ -39,7 +39,7 @@ export function useCustomFetch<
   _ResT = ResT extends void ? FetchResult<ReqT, Method> : ResT,
   DataT = _ResT,
   PickKeys extends KeysOf<DataT> = KeysOf<DataT>,
-  DefaultT = null
+  DefaultT = null,
 >(
   request: Ref<ReqT> | ReqT | (() => ReqT),
   options: UseFetchOptions<_ResT, DataT, PickKeys, DefaultT, ReqT, Method> & {
@@ -49,7 +49,7 @@ export function useCustomFetch<
   } = {
     validateResponse: true,
     alertOnError: true,
-  }
+  },
 ) {
   const defaults: UseFetchOptions<
     _ResT,
@@ -105,6 +105,6 @@ export function useCustomFetch<
 
   return useFetch<ResT, ErrorT, ReqT, Method, _ResT, DataT, PickKeys, DefaultT>(
     request,
-    params
+    params,
   );
 }

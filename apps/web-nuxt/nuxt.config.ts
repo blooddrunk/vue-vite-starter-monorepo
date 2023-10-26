@@ -1,23 +1,18 @@
 import { fileURLToPath } from 'url';
 
+console.log(fileURLToPath(new URL('./utils/typings', import.meta.url)));
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   alias: {
-    // '@/typings': path.resolve(__dirname, 'utils/typings'),
     '@/typings': fileURLToPath(new URL('./utils/typings', import.meta.url)),
   },
 
-  app: {
-    baseURL: process.env.NUXT_PUBLIC_PATH || '/',
+  build: {
+    transpile: [],
   },
 
-  ssr: false,
-
-  router: {
-    options: {
-      hashMode: true,
-    },
-  },
+  css: ['@/assets/css/main.css'],
 
   components: [
     { path: '@/components', extensions: ['vue'] },
@@ -33,12 +28,12 @@ export default defineNuxtConfig({
     },
   ],
 
-  css: ['@/assets/css/main.css'],
-
   devServer: {
     host: '0.0.0.0',
     port: 3030,
   },
+
+  devtools: { enabled: true },
 
   experimental: {
     typedPages: true,
@@ -57,6 +52,12 @@ export default defineNuxtConfig({
     '@element-plus/nuxt',
   ],
 
+  router: {
+    options: {
+      hashMode: true,
+    },
+  },
+
   runtimeConfig: {
     public: {
       publicPath: process.env.NUXT_PUBLIC_PATH || '/',
@@ -64,6 +65,8 @@ export default defineNuxtConfig({
       jsonServerPath: process.env.NUXT_JSON_SERVER_PATH || '/',
     },
   },
+
+  ssr: false,
 
   tailwindcss: {
     // ! tailwind.css  imported this way makes other css files which depend on tailwind functionality fail to compile

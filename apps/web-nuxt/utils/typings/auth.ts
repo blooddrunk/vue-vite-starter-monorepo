@@ -1,4 +1,4 @@
-import { RemovableRef } from '@vueuse/shared';
+import type { RemovableRef } from '@vueuse/shared';
 
 export type LoginInfo = {
   userName: string;

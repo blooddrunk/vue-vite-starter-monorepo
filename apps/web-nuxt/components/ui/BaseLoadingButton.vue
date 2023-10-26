@@ -19,7 +19,9 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import { ElMessageBox, ButtonType } from 'element-plus';
+import type { ButtonType } from 'element-plus';
+
+import { ElMessageBox } from 'element-plus';
 
 const slots = useSlots();
 const hasLoadingSlot = computed(() => !!slots.loading);

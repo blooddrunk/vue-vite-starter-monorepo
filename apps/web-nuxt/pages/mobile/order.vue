@@ -71,11 +71,11 @@
 </template>
 
 <script lang="ts" setup>
+import type { CartItem } from '@/typings';
+
 import { useRouteQuery } from '@vueuse/router';
 import { computed, ref } from 'vue';
 import { onBeforeRouteLeave } from 'vue-router';
-
-import { CartItem } from '@/typings';
 
 definePageMeta({
   layout: 'navbar',
@@ -96,7 +96,7 @@ if (product.isItemsEmpty) {
 const directOrderTarget = computed(() => {
   if (directOrderId.value) {
     return product.items.find(
-      (item) => String(item.id) === directOrderId.value
+      (item) => String(item.id) === directOrderId.value,
     );
   }
   return null;
@@ -114,7 +114,7 @@ const items = computed<CartItem[]>(() => {
   }
 });
 const isItemsEmpty = computed(
-  () => !items.value.length && !product.isItemsEmpty
+  () => !items.value.length && !product.isItemsEmpty,
 );
 const totalPrice = computed(() => {
   if (directOrderTarget.value) {
@@ -126,7 +126,7 @@ const totalPrice = computed(() => {
 
 const remarks = ref(cart.stagedOrderInfo.remarks ?? '');
 const isServiceAgreementChecked = ref(
-  cart.stagedOrderInfo.isServiceAgreementChecked ?? false
+  cart.stagedOrderInfo.isServiceAgreementChecked ?? false,
 );
 
 order.clearOrderInfo();

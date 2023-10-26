@@ -6,6 +6,7 @@
   "description": "",
   "scripts": {
     "web": "pnpm -F @app/web",
+    "web-nuxt-wtf": "pnpm -F @app/web-nuxt/wtf",
     "web-nuxt": "pnpm -F @app/web-nuxt",
     "shared": "pnpm -F @jn/shared",
     "eslint": "pnpm -F @jn/eslint-config"
@@ -15,7 +16,7 @@
     "@jn/eslint-config": "workspace:*",
     "eslint": "^8.52.0",
     "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.3.0",
+    "prettier-plugin-tailwindcss": "^0.5.6",
     "typescript": "^5.2.2"
   },
   "pnpm": {

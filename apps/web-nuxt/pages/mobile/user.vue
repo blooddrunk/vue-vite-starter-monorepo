@@ -12,7 +12,6 @@
 
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia';
-import { computed } from 'vue';
 
 definePageMeta({
   layout: 'tabbar-navbar',
@@ -31,10 +30,10 @@ if (!__DEV__ || isItemsEmpty.value) {
 const hasError = computed(() => !!error.value);
 
 const shouldShowSkeleton = computed(
-  () => isItemsEmpty.value && isItemsLoading.value
+  () => isItemsEmpty.value && isItemsLoading.value,
 );
 
 const shouldShowEmptyPlaceholder = computed(
-  () => isItemsEmpty.value && !isItemsLoading.value
+  () => isItemsEmpty.value && !isItemsLoading.value,
 );
 </script>

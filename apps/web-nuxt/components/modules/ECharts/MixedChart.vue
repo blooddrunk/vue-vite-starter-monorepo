@@ -12,6 +12,7 @@
 </template>
 
 <script lang="ts" setup>
+import type { C2Item } from '@/services/chart';
 import type { EChartsOption } from 'echarts';
 
 import {
@@ -20,8 +21,6 @@ import {
   toPercentage,
 } from '@jn/shared';
 import { zipWith } from 'lodash-es';
-
-import { C2Item } from '@/services/chart';
 
 const chartStore = useChartStore();
 
@@ -38,6 +37,7 @@ const { dimensions, series } = normalizeSeries(
         //   shadowColor: 'red',
         //   shadowBlur: 6,
         // },
+        yAxisIndex: 0,
         barWidth: 20,
         itemStyle: {
           borderRadius: [6, 6, 0, 0],
@@ -72,7 +72,7 @@ const { dimensions, series } = normalizeSeries(
           formatter: (params) => {
             const data = params.data as C2Item;
             return `{value1|${toCompactDisplayString(
-              data.value1
+              data.value1,
             )}}/{value2|${toPercentage(data.value2)}}`;
           },
           rich: {
@@ -106,7 +106,7 @@ const { dimensions, series } = normalizeSeries(
       },
     },
   ],
-  'bar'
+  'bar',
 );
 
 const option: EChartsOption = {

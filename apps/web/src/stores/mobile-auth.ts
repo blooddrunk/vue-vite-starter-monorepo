@@ -1,4 +1,3 @@
-import { promiseTimeout } from '@jn/shared';
 import { acceptHMRUpdate, defineStore } from 'pinia';
 
 import { MobileAuthInfo, MobileLoginInfo, MobileUserInfo } from '@/typings';

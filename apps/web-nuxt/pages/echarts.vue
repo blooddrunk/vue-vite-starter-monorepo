@@ -22,4 +22,7 @@
 definePageMeta({
   requiresAuth: false,
 });
+
+const chartStore = useChartStore();
+chartStore.fetchData();
 </script>

@@ -67,7 +67,7 @@ const handleValidate = (name: string, value: string) => {
 
 const serviceTime = ref<Date>();
 const displayServiceTime = computed(() =>
-  serviceTime.value ? format(serviceTime.value, 'yyyy-MM-dd HH:mm:ss') : ''
+  serviceTime.value ? format(serviceTime.value, 'yyyy-MM-dd HH:mm:ss') : '',
 );
 const serviceTimeRule = [
   {
@@ -87,7 +87,7 @@ const handleServiceTimeChange = (value: PickerConfirmEventParams[]) => {
     +value[0].selectedValues[2],
     +value[1].selectedValues[0],
     +value[1].selectedValues[1],
-    +value[1].selectedValues[2]
+    +value[1].selectedValues[2],
   );
   isTimePickerVisible.value = false;
 };

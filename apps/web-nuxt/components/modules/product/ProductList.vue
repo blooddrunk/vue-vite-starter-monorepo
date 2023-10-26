@@ -54,19 +54,19 @@ const isRefreshing = ref(false);
 const hasError = computed(() => !!itemsLoadingErrorMessage.value);
 
 const shouldShowSkeleton = computed(
-  () => (isItemsEmpty.value && isItemsLoading.value) || isRefreshing.value
+  () => (isItemsEmpty.value && isItemsLoading.value) || isRefreshing.value,
 );
 const shouldShowEmptyPlaceholder = computed(
-  () => isItemsEmpty.value && !isItemsLoading.value
+  () => isItemsEmpty.value && !isItemsLoading.value,
 );
 const placeholderItems = [...Array(3).keys()].map((id) => ({
   id: String(id),
 })) as ProductItem[];
 const itemsMaybeSkeleton = computed(() =>
-  shouldShowSkeleton.value ? placeholderItems : items.value
+  shouldShowSkeleton.value ? placeholderItems : items.value,
 );
 const productItemOrSkeleton = computed(() =>
-  shouldShowSkeleton.value ? MyProductItemSkeleton : MyProductItem
+  shouldShowSkeleton.value ? MyProductItemSkeleton : MyProductItem,
 );
 
 const fetchData = () => {

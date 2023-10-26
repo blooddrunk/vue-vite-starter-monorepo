@@ -35,7 +35,7 @@
   </van-swipe>
   <div
     v-else
-    class="w-full bg-light"
+    class="bg-light w-full"
     :class="
       layout === 'square' ? 'aspect-w-1 aspect-h-1' : 'aspect-w-16 aspect-h-9'
     "
@@ -53,7 +53,7 @@ const props = withDefaults(
   {
     items: () => [],
     layout: 'square',
-  }
+  },
 );
 
 const activeIndex = ref(0);

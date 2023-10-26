@@ -1,7 +1,7 @@
+import type { StoreKeys } from '@/services/chart';
+
 import { useStorage } from '@vueuse/core';
 import { acceptHMRUpdate, defineStore } from 'pinia';
-
-import { StoreKeys } from '@/services/chart';
 
 export const useChartStore = defineStore('chart', () => {
   const { data: store, execute: fetchData } = useDataByCity();
