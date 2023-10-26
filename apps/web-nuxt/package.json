@@ -37,15 +37,14 @@
     "@element-plus/nuxt": "^1.0.5",
     "@jn/eslint-config": "workspace:*",
     "@jn/tailwind-config": "workspace:*",
-    "@nuxt/devtools": "^0.6.7",
-    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@nuxtjs/tailwindcss": "^6.8.1",
     "@pinia/nuxt": "^0.4.11",
     "@types/lodash-es": "*",
-    "@types/node": "^20.5.6",
+    "@types/node": "^20.8.9",
     "@types/nprogress": "^0.2.0",
     "@vant/nuxt": "^1.0.2",
     "@vueuse/nuxt": "^10.3.0",
-    "nuxt": "^3.6.0",
+    "nuxt": "^3.8.0",
     "nuxt-icon": "^0.4.2"
   }
 }
