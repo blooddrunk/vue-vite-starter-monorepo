@@ -2,15 +2,15 @@ import type { MenuItem } from '@/typings';
 
 export default [
   {
-    id: '/secondary/about',
+    id: 'secondary-about',
     title: '关于',
-    route: '/secondary/about',
+    route: 'secondary-about',
     icon: 'information',
   },
   {
-    id: '/secondary/acknowledgements',
+    id: 'secondary-acknowledgements',
     title: '致谢',
-    route: '/secondary/acknowledgements',
+    route: 'secondary-acknowledgements',
     icon: 'hand-heart',
   },
 ] as MenuItem[];

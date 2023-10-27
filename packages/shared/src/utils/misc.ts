@@ -9,6 +9,11 @@ export const isNumeric = (num: string | number) =>
 export const isNumericStrict = (num: string | number) =>
   !isNaN(Number(num)) && isNumeric(num);
 
+export const isObjectEmpty = (obj: any) =>
+  obj !== null &&
+  obj.constructor.name === 'Object' &&
+  Object.keys(obj).length === 0;
+
 export type GetPlaceholderForNonValueOption = Partial<{
   fallback: string;
   isValueNumeric: boolean;
@@ -18,7 +23,7 @@ export const getPlaceholderForNonValue = (
   {
     fallback = '--',
     isValueNumeric = false,
-  }: GetPlaceholderForNonValueOption = {}
+  }: GetPlaceholderForNonValueOption = {},
 ): { value: any; hasUsedFallback: boolean } => {
   const unwrappedValue = unref(value);
   const shouldUseFallback = Array.isArray(unwrappedValue)
@@ -53,7 +58,7 @@ export const breakStringBy = (
   }: {
     breakpoint?: ((input: string) => number) | number;
     breakWith?: string;
-  } = {}
+  } = {},
 ) => {
   if (!str) {
     return str;
@@ -88,23 +93,23 @@ export const getFileNameOfResource = (path: string) => {
 };
 export const createNamedMapForGlobImport = <M>(modules: Record<string, M>) => {
   const modulesWithFileNameAsKey = mapKeys(modules, (value, key) =>
-    getFileNameOfResource(key)
+    getFileNameOfResource(key),
   );
 
   return pickBy(modulesWithFileNameAsKey, (value, key) => !key.startsWith('_'));
 };
 export const createNamedEntryForGlobImport = <M>(
-  modules: Record<string, M>
+  modules: Record<string, M>,
 ) => {
   return Object.entries(createNamedMapForGlobImport(modules));
 };
 
 export const flattenTree = <
   T extends Record<string, any> = any,
-  C extends keyof T = 'children'
+  C extends keyof T = 'children',
 >(
   tree: T[],
-  childrenKey: C = 'children' as C
+  childrenKey: C = 'children' as C,
 ) => {
   const result: (Omit<T, C> & {
     children: Omit<T, C>[];

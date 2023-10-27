@@ -32,7 +32,7 @@ const props = withDefaults(
   }>(),
   {
     title: '',
-  }
+  },
 );
 
 const evaluate = (row: ReadonlyFieldsetRow) => {
@@ -50,7 +50,7 @@ const evaluate = (row: ReadonlyFieldsetRow) => {
       .join('/');
   } else if ('valueKey' in row) {
     textContent = getPlaceholderForNonValue(
-      get(props.data, row.valueKey!)
+      get(props.data, row.valueKey!),
     ).value;
   }
 

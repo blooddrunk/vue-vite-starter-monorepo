@@ -1,9 +1,11 @@
 <template>
   <el-button
+    class="!px-1.5"
     :loading="isLoading"
     :disabled="isLoading"
     :type="type"
     :link="link"
+    :size="size"
     v-bind="$attrs"
     @click="handleButtonClick"
   >
@@ -19,7 +21,7 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import type { ButtonType } from 'element-plus';
+import type { ButtonType, ComponentSize } from 'element-plus';
 
 import { ElMessageBox } from 'element-plus';
 
@@ -29,13 +31,14 @@ const hasLoadingSlot = computed(() => !!slots.loading);
 type Props = {
   action: () => Promise<void>;
   confirmText?: string;
+  size?: ComponentSize;
   type?: ButtonType;
   link?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
   confirmText: '',
-  size: 'small',
+  size: 'default',
   type: 'primary',
   link: true,
 });

@@ -59,6 +59,6 @@ const getDeleteAction = (row: Product) => {
 };
 
 const handleSubmit = () => {
-  // simpleFormStore.fetchProducts();
+  simpleFormStore.fetchProducts();
 };
 </script>

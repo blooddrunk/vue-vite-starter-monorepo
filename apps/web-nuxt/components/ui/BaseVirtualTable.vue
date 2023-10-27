@@ -14,14 +14,15 @@
   </el-table-v2>
 </template>
 
-<script lang="tsx">
+<script lang="ts">
 export default defineComponent({
   inheritAttrs: false,
 });
 </script>
 
-<script lang="tsx" setup>
+<script lang="ts" setup>
 import type { TableV2Instance } from 'element-plus';
+
 // import type { Column, CheckboxValueType } from 'element-plus';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -23,12 +23,6 @@ export type BreadcrumbItem = {
   isVisible?: boolean;
 };
 
-export type CommonSelectOption = {
-  label: string;
-  value: string | number;
-  disabled?: boolean;
-};
-
 export type ReadonlyFieldsetData = Record<string | number | symbol, any>;
 
 export type ReadonlyFieldsetRow = {

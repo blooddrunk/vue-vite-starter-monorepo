@@ -38,7 +38,7 @@ export const createMenuLookup = (menuList: MenuItem[], system: SystemValue) => {
 
 export const getFirstNavigableMenu = (
   menuList: MenuItem[],
-  { excludeRoutes }: { excludeRoutes?: string[] } = {}
+  { excludeRoutes }: { excludeRoutes?: string[] } = {},
 ): MenuItem | null | undefined => {
   for (const item of menuList) {
     if (item.route) {
@@ -72,7 +72,7 @@ const menuModules = createNamedMapForGlobImport(
   import.meta.glob<MenuItem[]>(['./system/*.ts'], {
     import: 'default',
     eager: true,
-  })
+  }),
 );
 
 export const allMenuList = Object.values(menuModules).flat();
@@ -85,7 +85,7 @@ export const menuLookup = mergeWith(
     if (Array.isArray(objValue)) {
       return objValue.concat(srcValue);
     }
-  }
+  },
 );
 
 export const menuPerSystem: { [Key in SystemValue]: MenuItem[] } = {

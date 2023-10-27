@@ -2,6 +2,7 @@ import type { Ref } from 'vue';
 
 export * from './auth';
 export * from './misc';
+export * from './element';
 
 export * from './biz';
 

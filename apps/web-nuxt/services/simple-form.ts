@@ -3,7 +3,7 @@ import type { Product } from '@/typings';
 export const useSimpleFormList = () => {
   const runtimeConfig = useRuntimeConfig();
   return useAxios<Product[]>([], {
-    url: `${runtimeConfig.public.jsonServerPath}products`,
+    url: `${runtimeConfig.public.jsonServerPath}users`,
     __transformData: false,
   });
 };
@@ -13,12 +13,12 @@ export const useAddProduct = () => {
   const { execute } = useAxios<Product | null>(
     null,
     {
-      url: `${runtimeConfig.public.jsonServerPath}products`,
+      url: `${runtimeConfig.public.jsonServerPath}users`,
       method: 'post',
     },
     {
       immediate: false,
-    }
+    },
   );
 
   return {
@@ -34,12 +34,12 @@ export const useRemoveProduct = () => {
   const { execute } = useAxios<Product | null>(
     null,
     {
-      url: `${runtimeConfig.public.jsonServerPath}products`,
+      url: `${runtimeConfig.public.jsonServerPath}users`,
       method: 'delete',
     },
     {
       immediate: false,
-    }
+    },
   );
 
   return {
