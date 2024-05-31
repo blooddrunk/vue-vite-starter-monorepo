@@ -8,8 +8,8 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@types/lodash-es": "*",
-    "lodash-es": "*"
+    "@types/lodash-es": "^4.17.12",
+    "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
     "@types/nprogress": "*",
@@ -24,15 +24,15 @@
   },
   "devDependencies": {
     "@jn/tsconfig": "workspace:*",
-    "@types/nprogress": "^0.2.2",
-    "@vueuse/core": "^10.5.0",
-    "axios": "^1.5.1",
-    "echarts": "^5.4.3",
+    "@types/nprogress": "^0.2.3",
+    "@vueuse/core": "^10.9.0",
+    "axios": "^1.6.7",
+    "echarts": "^5.5.0",
     "immer": "^10.0.3",
     "nprogress": "^0.2.0",
-    "vee-validate": "^4.11.8",
-    "vue": "^3.3.7",
-    "vue-echarts": "^6.6.1"
+    "vee-validate": "^4.12.5",
+    "vue": "^3.4.21",
+    "vue-echarts": "^6.6.9"
   },
   "author": "",
   "license": "ISC"

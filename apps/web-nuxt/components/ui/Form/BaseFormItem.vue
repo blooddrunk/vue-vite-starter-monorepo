@@ -4,7 +4,7 @@
     :label="label"
     :label-width="labelWidth"
     :error="errorMessage"
-    :validate-status="validateStatus"
+    :validate-status="computedValidateStatus"
   >
     <slot v-bind="fieldProps"></slot>
   </el-form-item>
@@ -17,7 +17,9 @@ export default defineComponent({
 </script>
 
 <script lang="ts" setup>
-import { useFormField, type ValidationMode } from '@jn/shared';
+import type { ValidationMode } from '@jn/shared';
+
+import { useFormField } from '@jn/shared';
 
 type Props = {
   name?: string;
@@ -51,7 +53,7 @@ const { listeners, errorMessage, value, meta } = useFormField<any>({
   ...reactivePick(props, 'name', 'label', 'mode', 'validateOnMount', 'rules'),
 });
 
-const validateStatus = computed(() => {
+const computedValidateStatus = computed(() => {
   if (errorMessage.value) {
     return 'error';
   } else if (meta.pending) {

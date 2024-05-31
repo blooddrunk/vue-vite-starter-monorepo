@@ -13,7 +13,7 @@ const props = withDefaults(
   {
     tag: 'article',
     footer: false,
-  }
+  },
 );
 
 const pageStyle = computed(() => ({
@@ -21,7 +21,7 @@ const pageStyle = computed(() => ({
     props.footer === true
       ? '80px'
       : props.footer === false
-      ? undefined
-      : props.footer,
+        ? undefined
+        : props.footer,
 }));
 </script>
